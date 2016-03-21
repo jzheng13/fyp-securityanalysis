@@ -23,10 +23,9 @@ isSubstring(S1, S2) :-
 
 % -- getStringBefore/3
 % tail recursive function with returns string prefix before a certain
-% character, does not work for multiple occurences of the character 
-% (takes first as splitting point)
-
-getStringBefore([], [C | _], [C]).
+% character
+getStringBefore([], [C | _], [C]) :- !.
+getStringBefore([], [], _).
 getStringBefore([H | T1], [H | T2], [C]) :-
     getStringBefore(T1, T2, [C]).
 

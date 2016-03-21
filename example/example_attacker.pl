@@ -46,8 +46,9 @@ knowsInfo(attacker, Account, username, _) :-
     vulExists(Account, Vulnerability).
 
 knowsInfo(attacker, Account1, username, L) :-
-    accountConn(Account1, Account2, sameUser),
+    hasAccount(_, _, Account2),
     \+ member(Account2, L),
+    accountConn(Account1, Account2, sameUser),
     knowsInfo(attacker, Account2, username, [Account1 | L]).
 
 knowsInfo(attacker, Account, password, _) :-
@@ -55,10 +56,14 @@ knowsInfo(attacker, Account, password, _) :-
     vulExists(Account, Vulnerability).
 
 knowsInfo(attacker, Account1, password, L) :-
-    accountConn(Account1, Account2, samePw),
+    hasAccount(_, _, Account2),
     \+ member(Account2, L),
+    accountConn(Account1, Account2, samePw),
     knowsInfo(attacker, Account2, password, [Account1 | L]).
 
+knowsInfo(attacker, Account, email, _) :-
+    vulProperty(Vulnerability, emailKnown),
+    vulExists(Account, Vulnerability).
 
 
 % attacker knows personal information of user if the information is public
