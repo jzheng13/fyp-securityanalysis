@@ -112,6 +112,11 @@ accountConn(Acc1, Acc2, samePw) :-
     accountLogin(Acc2, _, Password),
     Acc1 \== Acc2.
 
+% same email
+accountConn(Acc1, Acc2, sameEmail) :-
+    accountEmail(Acc1, RecAcc, _),
+    accountEmail(Acc2, RecAcc, _).
+
 
 % (email) account is required for password reset/recovery
 accountConn(Acc1, RecAcc, recovery) :-

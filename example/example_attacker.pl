@@ -65,6 +65,12 @@ knowsInfo(attacker, Account, email, _) :-
     vulProperty(Vulnerability, emailKnown),
     vulExists(Account, Vulnerability).
 
+knowsInfo(attacker, Account1, email, L) :-
+    hasAccount(_, _, Account2),
+    \+ member(Account2, L),
+    accountConn(Account1, Account2, sameEmail),
+    knowsInfo(attacker, Account2, email, [Account1 | L]).
+
 
 % attacker knows personal information of user if the information is public
 % or can be obtained through other means.   
