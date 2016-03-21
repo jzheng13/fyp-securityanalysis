@@ -74,6 +74,12 @@ vulExists(Account, userInPw) :-
     ((getStringBefore(User, Username, "@"), isSubstring(User, Password));
     isSubstring(Username, Password)).
 
+% password should be change after a certain period of time
+vulExists(Account, pwExpired) :-
+    pwLastModified(Account, (Y, M, D)),
+    today(TY, TM, TD),
+    (TY - Y) * 365 + (TM - M) * 30 + TD - D > 180.
+
 
 % -- vulProperty/2
 % describles consequences of each vulnerability
@@ -83,6 +89,7 @@ vulProperty(commonPw, pwKnown).
 vulProperty(nameInPw, pwKnown).
 vulProperty(weakPw, pwVulnerable).
 vulProperty(userInPw, user2Pw).
+vulProperty(pwExpired, pwKnown).
 
 
 %% Example for test database : Connections %%

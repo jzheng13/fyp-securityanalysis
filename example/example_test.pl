@@ -65,6 +65,9 @@ test(weakPw) :-
     vulExists(wordpress1, weakPw),
     vulExists(twitchtv1, weakPw).
 
+test(pwExpired) :-
+    vulExists(google1, pwExpired).
+
 :- end_tests(vulnerabilities).
 
 :- begin_tests(connections).

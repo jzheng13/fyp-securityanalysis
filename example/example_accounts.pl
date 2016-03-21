@@ -63,6 +63,31 @@ accountLogin(wordpress1, "crazypblog", "cp2017blogpw").
 accountLogin(wordpress1, "crazyp2017@gmail.com", "cp2017blogpw").
 accountLogin(twitchtv1, "crazyp0085", "cptwitchpw").
 
+% -- pwLastModified/2
+% sets date of password last modified
+pwLastModified(google1, (2015, 6, 9)).
+pwLastModified(microsoft1, (2016, 3, 4)).
+pwLastModified(apple1, (2016, 3, 4)).
+pwLastModified(yahoo1, (2016, 3, 4)).
+pwLastModified(facebook1, (2016, 3, 4)).
+pwLastModified(twitter1, (2016, 3, 4)).
+pwLastModified(linkedin1, (2016, 3, 4)).
+pwLastModified(dropbox1, (2016, 3, 4)).
+pwLastModified(ebay1, (2016, 3, 4)).
+pwLastModified(ebay1, (2016, 3, 4)).
+pwLastModified(amazon1, (2016, 3, 4)).
+pwLastModified(yelp1, (2016, 3, 4)).
+pwLastModified(tumblr1, (2016, 3, 4)).
+pwLastModified(instagram1, (2016, 3, 4)).
+pwLastModified(quora1, (2016, 3, 4)).
+pwLastModified(steam1, (2016, 3, 11)).
+
+pwLastModified(google2, (2016, 3, 11)).
+pwLastModified(reddit1, (2016, 3, 11)).
+pwLastModified(facebook2, (2016, 3, 11)).
+pwLastModified(wordpress1, (2016, 3, 11)).
+pwLastModified(twitchtv1, (2016, 3, 11)).
+
 
 % -- singleSignOn/2
 % list of accounts with sso authentication, maps symbol of account to symbol of

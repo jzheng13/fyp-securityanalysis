@@ -3,6 +3,13 @@
 %% Helper functions %%
 
 
+% -- today/3
+% get today's date
+today(Y, M, D) :-
+    get_time(Stamp),
+    stamp_date_time(Stamp, DateTime, local),
+    date_time_value(date, DateTime, date(Y, M, D)).
+
 % -- isSubstring/2
 % checks or gets substring S1 from S2
 
