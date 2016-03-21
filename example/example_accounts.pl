@@ -1,11 +1,6 @@
 %% Example for test database : Accounts %%
 
 
-% -- allAccounts/1
-allAccounts(L) :-
-    findall(Account, hasAccount(_, _, Account), L).
-
-
 % -- hasAccount/3
 % list of accounts of user, mapped to a symbol
 hasAccount(google, "ce.paul0506@gmail.com", google1).

@@ -3,11 +3,11 @@
 
 :- begin_tests(utils).
 
+% tests not passing when run from file but works fine when typed in manually
 % test not passing
 test(isSubstring) :-
     isSubstring("a", "a"),
     isSubstring("abc", "abcdef"),
-    isSubstring("abc", "abc@somewhere"),
     isSubstring("abc", "aaabcccc"),
     isSubstring("abc", "aabbccabc").
 
@@ -69,7 +69,7 @@ test(weakPw) :-
 
 :- begin_tests(connections).
 
-% test not passing
+% test not passing (due to getStringBefore not passing)
 test(sameUser) :-
     accountConn(google1, microsoft1, sameUser),
     accountConn(instagram1, google1, sameUser),

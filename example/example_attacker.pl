@@ -47,27 +47,27 @@ knowsInfo(attacker, Account, username, _) :-
 
 knowsInfo(attacker, Account1, username, L) :-
     accountConn(Account1, Account2, sameUser),
-    \+ visited(Account2, L),
+    \+ member(Account2, L),
     knowsInfo(attacker, Account2, username, [Account1 | L]).
 
-%knowsInfo(attacker, Account, password, _) :-
-%    vulProperty(Vulnerability, pwKnown),
-%    vulExists(Account, Vulnerability).
+knowsInfo(attacker, Account, password, _) :-
+    vulProperty(Vulnerability, pwKnown),
+    vulExists(Account, Vulnerability).
 
-%knowsInfo(attacker, Account1, password, L) :-
-%    accountConn(Account1, Account2, samePw),
-%    \+ visited(Account2, L),
-%    knowsInfo(attacker, Account2, password, [Account1 | L]).
+knowsInfo(attacker, Account1, password, L) :-
+    accountConn(Account1, Account2, samePw),
+    \+ member(Account2, L),
+    knowsInfo(attacker, Account2, password, [Account1 | L]).
 
 
 
 % attacker knows personal information of user if the information is public
 % or can be obtained through other means.   
-%knowsInfo(attacker, _, Info, _) :-
-%    Info \== username,
-%    Info \== password,
-%    (public(Info);
-%    canRetrieve(Info)).
+knowsInfo(attacker, _, Info, _) :-
+    Info \== username,
+    Info \== password,
+    (public(Info);
+    canRetrieve(Info)).
 
 
 % public/1

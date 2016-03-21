@@ -79,7 +79,6 @@ vulExists(Account, userInPw) :-
 % describles consequences of each vulnerability
 vulProperty(publicUser, userKnown).
 vulProperty(publicEmail, emailKnown).
-vulProperty(userSimEmail, user2Email).
 vulProperty(commonPw, pwKnown).
 vulProperty(nameInPw, pwKnown).
 vulProperty(weakPw, pwVulnerable).
@@ -90,10 +89,9 @@ vulProperty(userInPw, user2Pw).
 
 
 % -- accountConn/3
-  
 
 % same username
-accountConn(Acc1, Accounts, sameUser) :-
+accountConn(Acc1, Acc2, sameUser) :-
     accountLogin(Acc1, Username1, _),
     accountLogin(Acc2, Username2, _),
     Acc1 \== Acc2,
