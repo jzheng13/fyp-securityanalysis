@@ -1,4 +1,4 @@
-:- load_files(['example_utils.pl', 'example_user.pl', 'example_accounts.pl']).
+:- ensure_loaded(['example_utils.pl', 'example_user.pl', 'example_accounts.pl']).
 
 %% Example for test database : Vulnerabilities %%
 
@@ -17,63 +17,83 @@ commonlyUsedPws(["123456", "password", "12345",
                  "qwertyuiop", "solo", "passw0rd",
                  "starwars", "iloveyou", "adobe123",
                  "admin", "photoshop", "sunshine",
-                 "password1", "azerty", "000000"]).
+                 "password1", "azerty", "000000", 
+                 "password123"]).
 
 
-% -- vulExists/3
+% -- vulExists/2
 
 % username is public
-vulExists(Account, Username, publicUser) :-
-    publicInfo(Account, Username, Info),
-    member(username, Info).
-vulExists(Account, Username, publicUser) :-
-    accountEmail(Account, Username, _, Username, public).
+vulExists(Account, publicUser) :-
+    userPublic(Account).
 
+% email is public
+vulExists(Account, publicEmail) :-
+    accountEmail(Account, _, public).
+
+% username same or similar to email -> know one know the other
+vulExists(Account, userSimEmail) :-
+    accountLogin(Account, Username, _),
+    accountEmail(Account, EmailAcc, _),
+    accountLogin(EmailAcc, Username, _).
+vulExists(Account, userSimEmail) :-
+    accountLogin(Account, Username, _),
+    accountEmail(Account, EmailAcc, _),
+    accountLogin(EmailAcc, Email, _),
+    getStringBefore(Same, Username, "@"),
+    getStringBefore(Same, Email, "@").
 
 % password is a commonly used password, easily obtained through dictionary
 % attacks
-vulExists(Account, Username, commonPw) :-
-    accountLogin(Account, Username, Password),
+vulExists(Account, commonPw) :-
+    accountLogin(Account, _, Password),
     commonlyUsedPws(CommonlyUsedPasswords),
     member(Password, CommonlyUsedPasswords).
 
-
 % password contains name of user, can also be obtained through dictionary
 % attacks (if name is known)
-vulExists(Account, Username, nameInPw) :-
+vulExists(Account, nameInPw) :-
     userInfo(firstname, First),
     userInfo(shortened, SFirst),
     userInfo(lastname, Last),
-    accountLogin(Account, Username, Password),
-    (isSubstring(First, Password); isSubstring(SFirst, Password),
+    accountLogin(Account, _, Password),
+    (isSubstring(First, Password); isSubstring(SFirst, Password)),
     isSubstring(Last, Password).
 
+% weak password, a strong password should have length > 8 chars, contains
+% uppercase and lowercase letters, number as well as symbols (and ideally
+% should not have a complete word)
+vulExists(Account, weakPw) :-
+    accountLogin(Account, _, Password),
+    \+ fulfillReq(Password).
 
 % password contains username for that account -> only one is required for
 % attack
-vulExists(Account, Username, userInPw) :-
+vulExists(Account, userInPw) :-
     accountLogin(Account, Username, Password),
     ((getStringBefore(User, Username, "@"), isSubstring(User, Password));
     isSubstring(Username, Password)).
 
 
-% weak password, a strong password should have length > 8 chars, contains
-% uppercase and lowercase letters, number as well as symbols (and ideally
-% should not have a complete word)
-vulExists(Account, Username, weakPw) :-
-    accountLogin(Account, Username, Password,
-    fulfillReq(Password).
-
-
+% -- vulProperty/2
+% describles consequences of each vulnerability
+vulProperty(publicUser, userKnown).
+vulProperty(publicEmail, emailKnown).
+vulProperty(userSimEmail, user2Email).
+vulProperty(commonPw, pwKnown).
+vulProperty(nameInPw, pwKnown).
+vulProperty(weakPw, pwVulnerable).
+vulProperty(userInPw, user2Pw).
 
 
 %% Example for test database : Connections %%
 
 
+% -- accountConn/3
+  
 
-% -- same username
-
-accountConn(Acc1, Username1, Acc2, Username2, sameUser) :-
+% same username
+accountConn(Acc1, Accounts, sameUser) :-
     accountLogin(Acc1, Username1, _),
     accountLogin(Acc2, Username2, _),
     Acc1 \== Acc2,
@@ -81,40 +101,23 @@ accountConn(Acc1, Username1, Acc2, Username2, sameUser) :-
     getStringBefore(User, Username2, "@").
 
 
-% -- same password
-
-accountConn(Acc1, Username1, Acc2, Username2, samePw) :-
-    accountLogin(Acc1, Username1, Password),
-    accountLogin(Acc2, Username2, Password),
+% same password
+accountConn(Acc1, Acc2, samePw) :-
+    accountLogin(Acc1, _, Password),
+    accountLogin(Acc2, _, Password),
     Acc1 \== Acc2.
 
 
-% -- recovery
-
-accountConn(Acc1, Username1, RecAcc, RecEmail, recovery) :-
-    accountLogin(Acc1, Username1, _),
-    accountEmail(Acc1, Username1, RecAcc, RecEmail, _).
+% (email) account is required for password reset/recovery
+accountConn(Acc1, RecAcc, recovery) :-
+    accountEmail(Acc1, RecAcc, _).
 
 
-%% Example for test database : Interactions %%
-
-
-
-hasAccount(Account, Username, attackerAccess) :-
-    vulExists(Account, Username, Id1),
-    vulProperty(Id1, userKnown),
-    vulExists(Account, Username, Id2),
-    vulProperty(Id2, pwKnown).
-
-
-
-%% Example for test database : Security Policy %%
-
-
-
-allow(_, _, userAccess).
-
-
-policyViolation(Account, Username, Access) :-
-    hasAccount(Account, Username, Access),
-    \+ allow(Account, Username, Access).
+% information for recovery public on another account
+accountConn(Acc1, Acc2, infoPublic) :-
+    resetInfo(Acc1, InfoRequired, _),
+    member(Info, InfoRequired),
+    publicInfo(Acc2, PublicInfo),
+    Acc1 \== Acc2,
+    member(Info, PublicInfo).
+    

@@ -3,14 +3,10 @@
 %% Helper functions %%
 
 
-% -- forall/2
-
-forall(A, B) :-
-    \+ A, \+ B.
-
-
 % -- isSubstring/2
 % checks or gets substring S1 from S2
+
+isSubstring(S, S).
 
 isSubstring(S1, S2) :-
     append(_, T, S2),
@@ -49,3 +45,8 @@ contains([P | _], T) :-
 contains([_ | PS], T) :-
     contains(PS, T).
     
+% -- visited/2
+% check if an account is visited
+visited(X, [X | _]) :- !.
+visited(X, [_ | XS]) :-
+    visited(X, XS).
