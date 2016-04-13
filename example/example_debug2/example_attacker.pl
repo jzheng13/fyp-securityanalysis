@@ -58,21 +58,21 @@ knowsInfo(attacker, Account, Field, _) :-
 
 knowsInfo(attacker, Account1, username, L) :-
     hasAccount(_, _, Account2),
+    accountConn(Account1, Account2, username, same),
     \+ member(Account2, L),
-    knowsInfo(attacker, Account2, username, [Account1 | L]),
-    accountConn(Account1, Account2, username, same).
+    knowsInfo(attacker, Account2, username, [Account1 | L]).
 
 knowsInfo(attacker, Account1, password, L) :-
     hasAccount(_, _, Account2),
+    accountConn(Account1, Account2, password, same),
     \+ member(Account2, L),
-    knowsInfo(attacker, Account2, password, [Account1 | L]),
-    accountConn(Account1, Account2, password, same).
+    knowsInfo(attacker, Account2, password, [Account1 | L]).
 
 knowsInfo(attacker, Account1, email, L) :-
     hasAccount(_, _, Account2),
+    accountConn(Account1, Account2, email, same),
     \+ member(Account2, L),
-    knowsInfo(attacker, Account2, email, [Account1 | L]),
-    accountConn(Account1, Account2, email, same).
+    knowsInfo(attacker, Account2, email, [Account1 | L]).
     
 
 
