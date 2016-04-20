@@ -1,4 +1,4 @@
-:- ensure_loaded(['./example_utils.pl', './example_accounts.pl', './example.pl']).
+:- ensure_loaded(['./example_utils.pl', './example.pl']).
 
 % (hasAccess(Account, attacker), write('Compromised='), writeln(Account), fail; true).
 
@@ -25,7 +25,7 @@ hasAccessTo(Account, Person, _) :-
     vulExists(Account, Vulnerability),
     vulProperty(Vulnerability, password, fromUser).
 
-nhasAccessTo(Account, Person, L) :-
+hasAccessTo(Account, Person, L) :-
     resetInfo(Account, Info, RecAcc), 
     knowsAll(Person, Account, Info), fail,
     \+ member(RecAcc, L),
@@ -64,6 +64,10 @@ knowsInfo(attacker, Account1, password, L) :-
     accountConn(Account1, Account2, password, same),
     \+ member(Account2, L),
     knowsInfo(attacker, Account2, password, [Account1 | L]).
+
+knowsInfo(attacker, Account1, email, _) :-
+    accountEmail(Account1, _, private),
+    hasAccess(Account1, attacker).
 
 knowsInfo(attacker, Account1, email, L) :-
     hasAccount(_, _, Account2),

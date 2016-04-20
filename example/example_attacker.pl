@@ -19,12 +19,8 @@ hasAccessTo(Account, Person, _) :-
     access(Person, SSOAccount, _),
     singleSignOn(Account, SSOAccount).
 
-hasAccessTo(Account, Person, _) :-
+hasAccessTo(Account, Person, L) :-
     knows(Person, Account, username),
-    vulExists(Account, Vulnerability),
-    vulProperty(Vulnerability, password, fromUser).
-
-nhasAccessTo(Account, Person, L) :-
     resetInfo(Account, Info, RecAcc), 
     knowsAll(Person, Account, Info), fail,
     \+ member(RecAcc, L),
@@ -82,8 +78,7 @@ knowsInfo(attacker, Account, Info, _) :-
     Info \== username,
     Info \== password,
     Info \== email,
-    (public(Info);
-    canRetrieve(Account, Info)).
+    (public(Info)).
 
 
 % public/1

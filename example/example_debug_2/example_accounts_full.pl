@@ -167,7 +167,7 @@ publicInfo(tumblr1, []).
 publicInfo(instagram1, [name]).
 publicInfo(pinterest1, [name, birthday, current_city, hometown, workplace, university]).
 publicInfo(foursquare1, [name, birthday, current_city, hometown, workplace, university]).
-publicInfo(quora1, [name, email, birthday, current_city, hometown, workplace, university]).
+publicInfo(quora1, [name, birthday, current_city, hometown, workplace, university]).
 publicInfo(stackoverflow1, [name, birthday, current_city, hometown, workplace, university]).
 publicInfo(steam1, []).
 
@@ -204,7 +204,7 @@ privateInfo(pinterest1, []).
 privateInfo(foursquare1, []).
 privateInfo(quora1, []).
 privateInfo(stackoverflow1, []).
-privateInfo(steam1, [email, location]).
+privateInfo(steam1, [location]).
 
 privateInfo(google2, [birthday]).
 privateInfo(reddit1, [friends]).
@@ -222,7 +222,7 @@ privateInfo(goal1, [birthday, location]).
 resetInfo(google1, [username, email], microsoft1). 
 resetInfo(microsoft1, [username, email], google1).
 resetInfo(apple1, [email], google1).
-resetInfo(apple1, [birthday, hometown, job], _).
+resetInfo(apple1, [birthday, hometown, job], default).
 resetInfo(yahoo1, [username, email], google1).
 resetInfo(facebook1, [email], google1).
 resetInfo(twitter1, [username], google1).

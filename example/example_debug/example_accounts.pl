@@ -10,6 +10,7 @@ hasAccount(yahoo, "ce.paul0506@yahoo.com", yahoo1).
 hasAccount(facebook, "ce.paul0506@gmail.com", facebook1).
 hasAccount(expedia, "ce.paul0506@gmail.com", expedia1).
 hasAccount(steam, "crazyp2017", steam1).
+hasAccount(twitter, "ce.paul0506@gmail.com", twitter1).
 
 hasAccount(google, "crazyp2017@gmail.com", google2).
 hasAccount(reddit, "aclip4lyfe", reddit1).
@@ -29,6 +30,8 @@ accountLogin(apple1, "ce.paul0506@gmail.com", "ChrisPaul0506").
 accountLogin(yahoo1, "ce.paul0506@yahoo.com", "chrispaul0506").
 accountLogin(facebook1, "ce.paul0506@gmail.com", "adobe123").
 accountLogin(steam1, "crazyp2017", "Acpwfaca2017?").
+accountLogin(twitter1, "ce.paul0506@gmail.com", "adobe123").
+accountLogin(twitter1, "cp0506", "adobe123").
 
 accountLogin(google2, "crazyp2017@gmail.com", "justarandompassword").
 accountLogin(reddit1, "aclip4lyfe", "password123").
@@ -46,6 +49,7 @@ pwLastModified(apple1, (2016, 3, 4)).
 pwLastModified(yahoo1, (2016, 3, 4)).
 pwLastModified(facebook1, (2016, 3, 4)).
 pwLastModified(steam1, (2016, 3, 11)).
+pwLastModified(twitter1, (2016, 3, 4)).
 
 pwLastModified(google2, (2016, 3, 11)).
 pwLastModified(reddit1, (2016, 3, 11)).
@@ -76,6 +80,7 @@ accountEmail(yahoo1, google1, private).
 accountEmail(facebook1, google1, public).
 accountEmail(expedia1, google1, private).
 accountEmail(steam1, google1, private).
+accountEmail(twitter1, google1, private).
 
 
 % -- userPublic/1
@@ -94,6 +99,7 @@ publicInfo(yahoo1, [name]).
 publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university]).
 publicInfo(expedia1, []).
 publicInfo(steam1, []).
+publicInfo(twitter1, [name]).
 
 publicInfo(google2, [name]).
 publicInfo(reddit1, []).
@@ -115,6 +121,7 @@ privateInfo(yahoo1, [mobile, birthday]).
 privateInfo(facebook1, []).
 privateInfo(expedia1, [name, birthday, mobile, address]).
 privateInfo(steam1, [email, location]).
+privateInfo(twitter1, []).
 
 privateInfo(google2, [birthday]).
 privateInfo(reddit1, [friends]).
@@ -139,6 +146,8 @@ resetInfo(expedia1, [email], google1).
 resetInfo(steam1, [username], google1).
 resetInfo(steam1, [email], google1).
 resetInfo(steam1, [mobile], google1).
+resetInfo(twitter1, [username], google1).
+resetInfo(twitter1, [email], google1).
 
 resetInfo(google2, [username, email], google1).
 resetInfo(reddit1, [username, email], google2).
