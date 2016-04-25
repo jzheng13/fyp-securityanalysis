@@ -1,0 +1,34 @@
+digraph AccountAccess {
+  node [shape=box];
+  "account" -> "SSO authentication";
+  "SSO authentication" -> "access to SSO account";
+  "access to SSO account" -> "access to current account";
+  "account" -> "username public";
+  "account" -> "username private";
+  "username private" -> "email public";
+  "username private" -> "email private";
+  "email private" -> "access to other account";
+  "access to other account" -> "username public";
+  "email public" -> "username public";
+  "username public" -> "same password";
+  "username public" -> "weak password";
+  "username public" -> "password expired";
+  "username public" -> "password contains information";
+  "same password" -> "password public";
+  "weak password" -> "password public";
+  "password expired" -> "password public";
+  "password contains information" -> "information public";
+  "information public" -> "password public";
+  "password contains information" -> "information private";
+  "information private" -> "access to information account";
+  "access to information account" -> "password public";
+  "password public" -> "access to current account";
+  "username public" -> "access to reset account";
+  "access to reset account" -> "reset information public";
+  "reset information public" -> "reset password";
+  "access to reset account" -> "reset information private";
+  1 [label="access to information account", shape=box];
+  "reset information private" -> 1;
+  1 -> "reset password";
+  "reset password" -> "access to current account";
+}

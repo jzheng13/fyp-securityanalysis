@@ -1,0 +1,2 @@
+http://www.swi-prolog.org/pack/list?p=tabling_dra
+http://www.swi-prolog.org/pack/list?p=memo

@@ -1,4 +1,4 @@
-:- ensure_loaded(['example_policy']).
+:- ensure_loaded(['policy']).
 
 :- dynamic bugHyp/4.
 
