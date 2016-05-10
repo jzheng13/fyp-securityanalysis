@@ -1,6 +1,6 @@
-:- ensure_loaded(['policy']).
-
 :- dynamic bugHyp/4.
+:- dynamic issuedInfo/1.
+:- dynamic assumeAccess/2.
 
 %% Example for test database : Hypothetical Analysis %%
 
@@ -16,9 +16,9 @@ insertVul(Account, ID, Field, Property) :-
 % -- giveInfo/1
 % issuing information to attacker
 giveInfo(Info) :-
-  asserta(publicInfo(default, Info)).
+  asserta(issuedInfo(Info)).
 
 % -- assumeAccess/2
 % assume a person has access to a particular account
 assumeAccess(Account, Person) :-
-  asserta(hasAccess(Account, Person)).
+  asserta(assumedAccess(Account, Person)).

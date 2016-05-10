@@ -1,4 +1,4 @@
-:- ensure_loaded(['example_utils.pl', 'example_user.pl', 'example_accounts.pl']).
+:- ensure_loaded(['example_utils.pl', 'example_user.pl', 'example_accounts_full.pl']).
 
 :- dynamic bugHyp/4.
 

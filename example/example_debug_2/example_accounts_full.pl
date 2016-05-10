@@ -42,7 +42,7 @@ accountLogin(google1, "ce.paul0506@gmail.com", "cp85goog!3PW").
 accountLogin(microsoft1, "ce.paul0506@outlook.com", "ChrisPaul0506").
 accountLogin(apple1, "ce.paul0506@gmail.com", "ChrisPaul0506").
 accountLogin(yahoo1, "ce.paul0506@yahoo.com", "chrispaul0506").
-accountLogin(facebook1, "ce.paul0506@gmail.com", "adobe123").
+accountLogin(facebook1, "ce.paul0506@gmail.com", "TittH4sav1pwiu!").
 accountLogin(twitter1, "ce.paul0506@gmail.com", "adobe123").
 accountLogin(twitter1, "cp0506", "adobe123").
 accountLogin(linkedin1, "ce.paul0506@gmail.com", "password123").
@@ -65,7 +65,7 @@ accountLogin(twitchtv1, "crazyp0085", "cptwitchpw").
 
 % -- pwLastModified/2
 % sets date of password last modified
-pwLastModified(google1, (2015, 6, 9)).
+pwLastModified(google1, (2016, 3, 4)).
 pwLastModified(microsoft1, (2016, 3, 4)).
 pwLastModified(apple1, (2016, 3, 4)).
 pwLastModified(yahoo1, (2016, 3, 4)).
@@ -77,7 +77,7 @@ pwLastModified(ebay1, (2016, 3, 4)).
 pwLastModified(amazon1, (2016, 3, 4)).
 pwLastModified(yelp1, (2016, 3, 4)).
 pwLastModified(tumblr1, (2016, 3, 4)).
-pwLastModified(instagram1, (2016, 3, 4)).
+pwLastModified(instagram1, (2016, 6, 9)).
 pwLastModified(quora1, (2016, 3, 4)).
 pwLastModified(steam1, (2016, 3, 11)).
 
@@ -86,6 +86,13 @@ pwLastModified(reddit1, (2016, 3, 11)).
 pwLastModified(facebook2, (2016, 3, 11)).
 pwLastModified(wordpress1, (2016, 3, 11)).
 pwLastModified(twitchtv1, (2016, 3, 11)).
+
+% -- pwContains/2
+% sets information required to break password
+pwContains(microsoft1, [name, birthday]).
+pwContains(apple1, [name, birthday]).
+pwContains(yahoo1, [name, birthday]).
+pwContains(tumblr1, [name, birthday]).
 
 
 % -- singleSignOn/2

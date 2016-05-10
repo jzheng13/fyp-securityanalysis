@@ -87,6 +87,13 @@ pwLastModified(facebook2, (2016, 3, 11)).
 pwLastModified(wordpress1, (2016, 3, 11)).
 pwLastModified(twitchtv1, (2016, 3, 11)).
 
+% -- pwContains/2
+% sets information required to break password
+pwContains(microsoft1, [name, birthday]).
+pwContains(apple1, [name, birthday]).
+pwContains(yahoo1, [name, birthday]).
+pwContains(tumblr1, [name, birthday]).
+
 
 % -- singleSignOn/2
 % list of accounts with sso authentication, maps symbol of account to symbol of

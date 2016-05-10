@@ -1,0 +1,19 @@
+digraph G {
+"hasAccess(apple1,attacker)" -> "hasAccessTo(apple1,attacker,[])";
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,username,[])";
+"knows(attacker,apple1,username,[])" -> "knows(attacker,apple1,email,[])";
+"knows(attacker,apple1,email,[])" -> "vulExists(facebook1,publicEmail)";
+"knows(attacker,apple1,email,[])" -> "accountConn(apple1,facebook1,email,same)";
+"knows(attacker,apple1,email,[])" -> "accountConn(apple1,yahoo1,email,same)";
+"knows(attacker,apple1,email,[])" -> "accountConn(apple1,microsoft1,email,same)";
+"knows(attacker,apple1,username,[])" -> "vulExists(apple1,userSimEmail)";
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,password,[])";
+"knows(attacker,apple1,password,[])" -> "knowsAll(attacker,apple1,[name,birthday],[])";
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knowsAll(attacker,apple1,[birthday],[])";
+"knowsAll(attacker,apple1,[birthday],[])" -> "knowsAll(attacker,apple1,[],[])";
+"knowsAll(attacker,apple1,[birthday],[])" -> "knows(attacker,apple1,birthday,[])";
+"knows(attacker,apple1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])";
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knows(attacker,apple1,name,[])";
+"knows(attacker,apple1,name,[])" -> "publicInfo(google1,[name])";
+"knows(attacker,apple1,password,[])" -> "pwContains(apple1,[name,birthday])";
+}

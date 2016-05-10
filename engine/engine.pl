@@ -1,4 +1,4 @@
-:- ensure_loaded(['utils.pl', 'user.pl', 'accounts.pl']).
+:- ensure_loaded(['utils.pl', 'user.pl', 'accounts.pl', 'hypothesis.pl']).
 
 :- dynamic bugHyp/4.
 
@@ -86,7 +86,6 @@ vulExists(Account, pwExpired) :-
 vulExists(Account, VulID) :-
     bugHyp(Account, VulID, _, _).
 
-
 % -- vulProperty/3
 % describles consequences of each vulnerability
 vulProperty(publicUser, username, known).
@@ -98,6 +97,7 @@ vulProperty(userInPw, password, fromUser).
 vulProperty(pwExpired, password, known).
 vulProperty(VulID, Field, Property) :-
     bugHyp(_, VulID, Field, Property).
+
 
 
 %% Example for test database : Connections and Interactions %%

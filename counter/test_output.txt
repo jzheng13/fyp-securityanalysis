@@ -1,0 +1,4 @@
+ T Call: (2) hasAccess(_G286, attacker)
+ T Call: (3) hasAccessTo(_G286, attacker, [])
+ T Exit: (3) hasAccessTo(default, attacker, [])
+ T Exit: (2) hasAccess(default, attacker)

@@ -3,8 +3,10 @@
 %% Example for test database : Security Policy %%
 
 % -- allow/2
-% currently only allowing user access
+% currently only allowing user access to all accounts, and attacker access to
+% default account (placeholder for null)
 allow(_, user).
+allow(default, attacker).
 
 
 % -- policyViolation/2

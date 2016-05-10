@@ -71,3 +71,13 @@ removeFrom(T, X, [X | T]) :-
 removeFrom([H | T1], X, [H | T2]) :-
     H \== X,
     removeFrom(T1, X, T2). 
+
+% -- countSolutions/2
+% count number of solutions for a query
+countSolutions(Count, Query) :-
+    aggregate_all(count, Query, Count).
+
+% -- countUniqueSolns/3
+% count number of solutions for a query
+countUniqueSolns(Count, Query, Variable) :-
+   aggregate_all(count, Variable, Query, Count).

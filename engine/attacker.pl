@@ -1,4 +1,7 @@
-:- ensure_loaded(['utils.pl', 'engine.pl']).
+:- ensure_loaded(['utils.pl', 'engine.pl', 'hypothesis.pl']).
+
+:- dynamic issuedInfo/1.
+:- dynamic assumedAccess/2.
 
 % (hasAccess(Account, attacker), write('Compromised='), writeln(Account), fail; true).
 
@@ -14,6 +17,9 @@ hasAccess(Account, attacker) :-
     hasAccessTo(Account, attacker, []).
 
 hasAccessTo(default, _, _).
+
+hasAccessTo(Account, Person, _) :-
+    assumedAccess(Account, Person).
 
 hasAccessTo(Account, Person, L) :-
     knows(Person, Account, password, L), 
@@ -48,37 +54,33 @@ knows(Person, Account, Info, L) :-
 % knowsInfo/4
 % helper function to avoid revisiting accounts
 
-knowsInformation(attacker, Account, Field, _) :-
+knowsInformation(attacker, Account, Field) :-
     vulExists(Account, Vulnerability),
     vulProperty(Vulnerability, Field, known).
 
-knowsInformation(attacker, Account, username, L) :-
-    vulExists(Account, userSimEmail),
-    knows(attacker, Account, email, L).
+knowsInfo(attacker, Account, Field, _) :-
+    knowsInformation(attacker, Account, Field).
 
-knowsInformation(attacker, Account, password, L) :-
+knowsInfo(attacker, Account1, Field, _) :-
+    accountConn(Account1, Account2, Field, same),
+    knowsInformation(attacker, Account2, Field).
+
+knowsInfo(attacker, Account, password, L) :-
     vulExists(Account, userInPw),
     knows(attacker, Account, username, L).
 
-knowsInformation(attacker, Account, password, L) :-
-    vulExists(Account, nameInPw),
-    knows(attacker, Account, name, L).
-
-knowsInformation(attacker, Account, email, _) :-
+knowsInfo(attacker, Account, username, L) :-
     vulExists(Account, userSimEmail),
-    vulExists(Account, publicUser).
+    knows(attacker, Account, email, L).
 
-knowsInfo(attacker, Account, Field, L) :-
-    knowsInformation(attacker, Account, Field, L).
-
-knowsInfo(attacker, Account1, Field, L) :-
-    accountConn(Account1, Account2, Field, same),
-    knowsInformation(attacker, Account2, Field, [Account1 | L]).
+knowsInfo(attacker, Account, password, L) :-
+    pwContains(Account, Info),
+    knowsAll(attacker, Account, Info, L).
 
 
 % attacker knows personal information of user if the information is public
 % or can be obtained through other means.   
-knowsInfo(attacker, Account, Info, _, L) :-
+knowsInfo(attacker, Account, Info, L) :-
     Info \== username,
     Info \== password,
     Info \== email,
@@ -99,12 +101,18 @@ public(I) :-
     member(IS, Info),
     subset(I, IS).
 
+
+public(I) :-
+    issuedInfo(I).
+
     
 % canRetrieve/1
 % a piece of information can be retrieved by exploiting links across
 % accounts
-canRetrieve(Account, I, L) :-
-    privateInfo(Account2, Info),
-    Account \== Account2,
-    member(I, Info),
-    hasAccessTo(Account2, attacker, [Account | L]).
+canRetrieve(Acc1, I, L) :-
+    subset(I, Info), 
+    privateInfo(Acc2, PrivateInfo),
+    member(Info, PrivateInfo),
+    \+ member(Acc2, L),
+    Acc2 \== Acc1,
+    hasAccessTo(Acc2, attacker, [Acc1 | L]).
