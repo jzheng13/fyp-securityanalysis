@@ -1,0 +1,1667 @@
+ T Exit: (2) hasAccess(microsoft1, attacker)
+0 output print
+1 output print
+ T Exit: (3) hasAccessTo(microsoft1, attacker, [])
+0 output print
+1 output print
+ T Exit: (4) knows(attacker, microsoft1, username, [])
+0 output print
+1 output print
+ T Exit: (6) knows(attacker, microsoft1, email, [])
+0 output print
+1 output print
+ T Exit: (9) vulExists(facebook1, publicEmail)
+0 output print
+1 output print
+ T Redo: (9) vulExists(facebook1, _G629)
+redos 0 = 1
+redoString 0 = vulExists(facebook1,_G629)
+redos 1 = 1
+redoString 1 = vulExists(facebook1,_G629)
+ T Fail: (10) userPublic(facebook1)
+ T Call: (10) userPublic(facebook1)
+ T Call: (9) vulExists(facebook1, _G629)
+redos 0 = 0
+redos 1 = 0
+ T Exit: (8) accountConn(microsoft1, facebook1, email, same)
+0 output print
+1 output print
+ T Fail: (9) vulExists(apple1, _G629)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+ T Redo: (9) vulExists(apple1, _G629)
+redos 0 = 1
+redoString 0 = vulExists(apple1,_G629)
+redos 1 = 1
+redoString 1 = vulExists(apple1,_G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, userInPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, weakPw)
+ T Redo: (9) vulExists(apple1, weakPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, nameInPw)
+ T Redo: (9) vulExists(apple1, nameInPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, userSimEmail)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, userSimEmail)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Fail: (10) userPublic(apple1)
+ T Call: (10) userPublic(apple1)
+ T Call: (9) vulExists(apple1, _G629)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+ T Exit: (8) accountConn(microsoft1, apple1, email, same)
+0 output print
+1 output print
+ T Call: (8) accountConn(microsoft1, _G629, email, same)
+ T Fail: (9) vulExists(microsoft1, _G629)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+ T Redo: (9) vulExists(microsoft1, _G629)
+redos 0 = 1
+redoString 0 = vulExists(microsoft1,_G629)
+redos 1 = 1
+redoString 1 = vulExists(microsoft1,_G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, userInPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, weakPw)
+ T Redo: (9) vulExists(microsoft1, weakPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, nameInPw)
+ T Redo: (9) vulExists(microsoft1, nameInPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, userSimEmail)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Fail: (10) userPublic(microsoft1)
+ T Call: (10) userPublic(microsoft1)
+ T Call: (9) vulExists(microsoft1, _G629)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+ T Call: (6) knows(attacker, microsoft1, email, [])
+ T Exit: (6) vulExists(microsoft1, userSimEmail)
+0 output print
+1 output print
+ T Redo: (6) vulExists(microsoft1, userSimEmail)
+redos 0 = 1
+redoString 0 = vulExists(microsoft1,userSimEmail)
+redos 1 = 1
+redoString 1 = vulExists(microsoft1,userSimEmail)
+ T Call: (6) vulExists(microsoft1, userSimEmail)
+redos 0 = 0
+redos 1 = 0
+ T Fail: (6) accountConn(microsoft1, _G317, username, same)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+ T Redo: (6) accountConn(microsoft1, _G317, username, same)
+redos 0 = 1
+redoString 0 = accountConn(microsoft1,_G317,username,same)
+redos 1 = 1
+redoString 1 = accountConn(microsoft1,_G317,username,same)
+ T Fail: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, userInPw)
+ T Redo: (7) vulExists(twitter1, userInPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, weakPw)
+ T Exit: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, nameInPw)
+ T Redo: (7) vulExists(twitter1, nameInPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, commonPw)
+ T Exit: (7) vulExists(twitter1, commonPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, userSimEmail)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, userSimEmail)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Fail: (8) userPublic(twitter1)
+ T Call: (8) userPublic(twitter1)
+ T Call: (7) vulExists(twitter1, _G650)
+ T Exit: (6) accountConn(microsoft1, twitter1, username, same)
+ T Fail: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, userInPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, weakPw)
+ T Redo: (7) vulExists(facebook1, weakPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, nameInPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, commonPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, userSimEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, userSimEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, publicEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Fail: (8) userPublic(facebook1)
+ T Call: (8) userPublic(facebook1)
+ T Call: (7) vulExists(facebook1, _G650)
+ T Exit: (6) accountConn(microsoft1, facebook1, username, same)
+ T Fail: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, userInPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Fail: (8) userPublic(apple1)
+ T Call: (8) userPublic(apple1)
+ T Call: (7) vulExists(apple1, _G665)
+ T Exit: (6) accountConn(microsoft1, apple1, username, same)
+ T Fail: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Exit: (7) vulExists(google1, pwExpired)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, userInPw)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, nameInPw)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Exit: (7) vulExists(google1, userSimEmail)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Fail: (8) userPublic(google1)
+ T Call: (8) userPublic(google1)
+ T Call: (7) vulExists(google1, _G662)
+ T Exit: (6) accountConn(microsoft1, google1, username, same)
+ T Call: (6) accountConn(microsoft1, _G317, username, same)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+ T Fail: (7) vulExists(microsoft1, _G317)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+ T Redo: (7) vulExists(microsoft1, _G317)
+redos 0 = 1
+redoString 0 = vulExists(microsoft1,_G317)
+redos 1 = 1
+redoString 1 = vulExists(microsoft1,_G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, userInPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, userSimEmail)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Fail: (8) userPublic(microsoft1)
+ T Call: (8) userPublic(microsoft1)
+ T Call: (7) vulExists(microsoft1, _G317)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+ T Call: (4) knows(attacker, microsoft1, username, [])
+ T Exit: (4) knows(attacker, microsoft1, password, [])
+0 output print
+1 output print
+ T Exit: (6) knowsAll(attacker, microsoft1, [name, birthday], [])
+0 output print
+1 output print
+ T Exit: (7) knowsAll(attacker, microsoft1, [birthday], [])
+0 output print
+1 output print
+ T Exit: (8) knowsAll(attacker, microsoft1, [], [])
+0 output print
+1 output print
+ T Call: (8) knowsAll(attacker, microsoft1, [], [])
+ T Exit: (8) knows(attacker, microsoft1, birthday, [])
+0 output print
+1 output print
+ T Exit: (11) publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university])
+0 output print
+1 output print
+ T Redo: (11) publicInfo(_G298, _G299)
+redos 0 = 1
+redoString 0 = publicInfo(_G298,_G299)
+redos 1 = 1
+redoString 1 = publicInfo(_G298,_G299)
+ T Exit: (11) publicInfo(apple1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(microsoft1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(google1, [name])
+ T Call: (11) publicInfo(_G298, _G299)
+redos 0 = 0
+redos 1 = 0
+ T Fail: (10) accountConn(microsoft1, _G299, birthday, same)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+ T Call: (10) accountConn(microsoft1, _G299, birthday, same)
+fails 0 = 0
+fails 1 = 0
+ T Fail: (11) vulExists(microsoft1, _G299)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+ T Redo: (11) vulExists(microsoft1, _G299)
+redos 0 = 1
+redoString 0 = vulExists(microsoft1,_G299)
+redos 1 = 1
+redoString 1 = vulExists(microsoft1,_G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, userInPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, weakPw)
+ T Redo: (11) vulExists(microsoft1, weakPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, nameInPw)
+ T Redo: (11) vulExists(microsoft1, nameInPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, userSimEmail)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Fail: (12) userPublic(microsoft1)
+ T Call: (12) userPublic(microsoft1)
+ T Call: (11) vulExists(microsoft1, _G299)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+ T Call: (8) knows(attacker, microsoft1, birthday, [])
+ T Call: (7) knowsAll(attacker, microsoft1, [birthday], [])
+ T Exit: (7) knows(attacker, microsoft1, name, [])
+0 output print
+1 output print
+ T Exit: (10) publicInfo(twitter1, [name])
+0 output print
+1 output print
+ T Redo: (10) publicInfo(_G295, _G296)
+redos 0 = 1
+redoString 0 = publicInfo(_G295,_G296)
+redos 1 = 1
+redoString 1 = publicInfo(_G295,_G296)
+ T Exit: (10) publicInfo(steam1, [])
+ T Redo: (10) publicInfo(_G295, _G296)
+ T Exit: (10) publicInfo(expedia1, [])
+ T Redo: (10) publicInfo(_G295, _G296)
+ T Fail: (7) knowsAll(attacker, microsoft1, [birthday], [])
+ T Fail: (8) knows(attacker, microsoft1, birthday, [])
+ T Fail: (10) canRetrieve(microsoft1, birthday, [])
+ T Call: (10) canRetrieve(microsoft1, birthday, [])
+ T Exit: (11) publicInfo(twitter1, [name])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(steam1, [])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(expedia1, [])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(apple1, [])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(microsoft1, [name])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(google1, [name])
+ T Call: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(twitter1, [name])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(steam1, [])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(expedia1, [])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Fail: (8) knowsAll(attacker, microsoft1, [], [])
+ T Redo: (8) knowsAll(attacker, microsoft1, [], [])
+ T Fail: (4) knows(attacker, microsoft1, username, [])
+ T Fail: (6) vulExists(microsoft1, userSimEmail)
+ T Redo: (6) vulExists(microsoft1, userSimEmail)
+ T Fail: (6) knows(attacker, microsoft1, email, [])
+ T Fail: (8) accountConn(microsoft1, _G644, email, same)
+ T Redo: (8) accountConn(microsoft1, _G644, email, same)
+ T Fail: (9) vulExists(twitter1, _G644)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Redo: (9) vulExists(twitter1, userInPw)
+ T Redo: (9) vulExists(twitter1, userInPw)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Exit: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, weakPw)
+ T Exit: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Redo: (9) vulExists(twitter1, nameInPw)
+ T Redo: (9) vulExists(twitter1, nameInPw)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Exit: (9) vulExists(twitter1, commonPw)
+ T Exit: (9) vulExists(twitter1, commonPw)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Exit: (9) vulExists(twitter1, userSimEmail)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Exit: (9) vulExists(twitter1, userSimEmail)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Redo: (9) vulExists(twitter1, _G644)
+ T Fail: (10) userPublic(twitter1)
+ T Call: (10) userPublic(twitter1)
+ T Call: (9) vulExists(twitter1, _G644)
+ T Exit: (8) accountConn(microsoft1, twitter1, email, same)
+ T Fail: (9) vulExists(steam1, _G644)
+ T Redo: (9) vulExists(steam1, _G644)
+ T Redo: (9) vulExists(steam1, _G644)
+ T Redo: (9) vulExists(steam1, userInPw)
+ T Redo: (9) vulExists(steam1, _G644)
+ T Redo: (9) vulExists(steam1, nameInPw)
+ T Redo: (9) vulExists(steam1, _G644)
+ T Redo: (9) vulExists(steam1, _G644)
+ T Redo: (9) vulExists(steam1, _G644)
+ T Redo: (9) vulExists(steam1, _G644)
+ T Redo: (9) vulExists(steam1, _G644)
+ T Exit: (9) vulExists(steam1, publicUser)
+ T Exit: (10) userPublic(steam1)
+ T Call: (10) userPublic(steam1)
+ T Call: (9) vulExists(steam1, _G644)
+ T Exit: (8) accountConn(microsoft1, steam1, email, same)
+ T Fail: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Redo: (9) vulExists(expedia1, _G644)
+ T Fail: (10) userPublic(expedia1)
+ T Call: (10) userPublic(expedia1)
+ T Call: (9) vulExists(expedia1, _G644)
+ T Exit: (8) accountConn(microsoft1, expedia1, email, same)
+ T Fail: (9) vulExists(facebook1, _G644)
+ T Redo: (9) vulExists(facebook1, _G644)
+ T Redo: (9) vulExists(facebook1, _G644)
+ T Redo: (9) vulExists(facebook1, userInPw)
+ T Redo: (9) vulExists(facebook1, _G644)
+ T Exit: (9) vulExists(facebook1, weakPw)
+ T Redo: (9) vulExists(facebook1, weakPw)
+ T Redo: (9) vulExists(facebook1, _G644)
+ T Redo: (9) vulExists(facebook1, nameInPw)
+ T Redo: (9) vulExists(facebook1, _G644)
+ T Exit: (9) vulExists(facebook1, commonPw)
+ T Redo: (9) vulExists(facebook1, _G644)
+ T Exit: (9) vulExists(facebook1, userSimEmail)
+ T Redo: (9) vulExists(facebook1, _G644)
+ T Exit: (9) vulExists(facebook1, userSimEmail)
+ T Redo: (9) vulExists(facebook1, _G644)
+ T Exit: (2) hasAccess(microsoft1, attacker)
+2 output print
+ T Exit: (3) hasAccessTo(microsoft1, attacker, [])
+2 output print
+ T Exit: (4) knows(attacker, microsoft1, username, [])
+2 output print
+ T Exit: (6) knows(attacker, microsoft1, email, [])
+2 output print
+ T Exit: (9) vulExists(facebook1, publicEmail)
+2 output print
+ T Redo: (9) vulExists(facebook1, _G644)
+redos 2 = 1
+redoString 2 = vulExists(facebook1,_G644)
+ T Fail: (10) userPublic(facebook1)
+ T Call: (10) userPublic(facebook1)
+ T Call: (9) vulExists(facebook1, _G644)
+redos 2 = 0
+ T Exit: (8) accountConn(microsoft1, facebook1, email, same)
+2 output print
+ T Fail: (9) vulExists(apple1, _G644)
+fails 2 = 1
+fails 2 = 1
+ T Redo: (9) vulExists(apple1, _G644)
+redos 2 = 1
+redoString 2 = vulExists(apple1,_G644)
+ T Redo: (9) vulExists(apple1, _G644)
+ T Redo: (9) vulExists(apple1, userInPw)
+ T Redo: (9) vulExists(apple1, _G644)
+ T Exit: (9) vulExists(apple1, weakPw)
+ T Redo: (9) vulExists(apple1, weakPw)
+ T Redo: (9) vulExists(apple1, _G644)
+ T Exit: (9) vulExists(apple1, nameInPw)
+ T Redo: (9) vulExists(apple1, nameInPw)
+ T Redo: (9) vulExists(apple1, _G644)
+ T Redo: (9) vulExists(apple1, _G644)
+ T Exit: (9) vulExists(apple1, userSimEmail)
+ T Redo: (9) vulExists(apple1, _G644)
+ T Exit: (9) vulExists(apple1, userSimEmail)
+ T Redo: (9) vulExists(apple1, _G644)
+ T Redo: (9) vulExists(apple1, _G644)
+ T Fail: (10) userPublic(apple1)
+ T Call: (10) userPublic(apple1)
+ T Call: (9) vulExists(apple1, _G644)
+redos 2 = 0
+fails 2 = 0
+ T Exit: (8) accountConn(microsoft1, apple1, email, same)
+2 output print
+ T Call: (8) accountConn(microsoft1, _G644, email, same)
+ T Fail: (9) vulExists(microsoft1, _G644)
+fails 2 = 1
+fails 2 = 1
+ T Redo: (9) vulExists(microsoft1, _G644)
+redos 2 = 1
+redoString 2 = vulExists(microsoft1,_G644)
+ T Redo: (9) vulExists(microsoft1, _G644)
+ T Redo: (9) vulExists(microsoft1, userInPw)
+ T Redo: (9) vulExists(microsoft1, _G644)
+ T Exit: (9) vulExists(microsoft1, weakPw)
+ T Redo: (9) vulExists(microsoft1, weakPw)
+ T Redo: (9) vulExists(microsoft1, _G644)
+ T Exit: (9) vulExists(microsoft1, nameInPw)
+ T Redo: (9) vulExists(microsoft1, nameInPw)
+ T Redo: (9) vulExists(microsoft1, _G644)
+ T Redo: (9) vulExists(microsoft1, _G644)
+ T Exit: (9) vulExists(microsoft1, userSimEmail)
+ T Redo: (9) vulExists(microsoft1, _G644)
+ T Redo: (9) vulExists(microsoft1, _G644)
+ T Redo: (9) vulExists(microsoft1, _G644)
+ T Fail: (10) userPublic(microsoft1)
+ T Call: (10) userPublic(microsoft1)
+ T Call: (9) vulExists(microsoft1, _G644)
+redos 2 = 0
+fails 2 = 0
+ T Call: (6) knows(attacker, microsoft1, email, [])
+ T Exit: (6) vulExists(microsoft1, userSimEmail)
+2 output print
+ T Redo: (6) vulExists(microsoft1, userSimEmail)
+redos 2 = 1
+redoString 2 = vulExists(microsoft1,userSimEmail)
+ T Call: (6) vulExists(microsoft1, userSimEmail)
+redos 2 = 0
+ T Fail: (6) accountConn(microsoft1, _G332, username, same)
+fails 2 = 1
+fails 2 = 1
+ T Redo: (6) accountConn(microsoft1, _G332, username, same)
+redos 2 = 1
+redoString 2 = accountConn(microsoft1,_G332,username,same)
+ T Fail: (7) vulExists(twitter1, _G665)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Redo: (7) vulExists(twitter1, userInPw)
+ T Redo: (7) vulExists(twitter1, userInPw)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Exit: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, weakPw)
+ T Exit: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Redo: (7) vulExists(twitter1, nameInPw)
+ T Redo: (7) vulExists(twitter1, nameInPw)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Exit: (7) vulExists(twitter1, commonPw)
+ T Exit: (7) vulExists(twitter1, commonPw)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Exit: (7) vulExists(twitter1, userSimEmail)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Exit: (7) vulExists(twitter1, userSimEmail)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Redo: (7) vulExists(twitter1, _G665)
+ T Fail: (8) userPublic(twitter1)
+ T Call: (8) userPublic(twitter1)
+ T Call: (7) vulExists(twitter1, _G665)
+ T Exit: (6) accountConn(microsoft1, twitter1, username, same)
+ T Fail: (7) vulExists(facebook1, _G665)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Redo: (7) vulExists(facebook1, userInPw)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Exit: (7) vulExists(facebook1, weakPw)
+ T Redo: (7) vulExists(facebook1, weakPw)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Redo: (7) vulExists(facebook1, nameInPw)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Exit: (7) vulExists(facebook1, commonPw)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Exit: (7) vulExists(facebook1, userSimEmail)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Exit: (7) vulExists(facebook1, userSimEmail)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Exit: (7) vulExists(facebook1, publicEmail)
+ T Redo: (7) vulExists(facebook1, _G665)
+ T Fail: (8) userPublic(facebook1)
+ T Call: (8) userPublic(facebook1)
+ T Call: (7) vulExists(facebook1, _G665)
+ T Exit: (6) accountConn(microsoft1, facebook1, username, same)
+ T Fail: (7) vulExists(apple1, _G680)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Redo: (7) vulExists(apple1, userInPw)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Exit: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Exit: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Redo: (7) vulExists(apple1, _G680)
+ T Fail: (8) userPublic(apple1)
+ T Call: (8) userPublic(apple1)
+ T Call: (7) vulExists(apple1, _G680)
+ T Exit: (6) accountConn(microsoft1, apple1, username, same)
+ T Fail: (7) vulExists(google1, _G677)
+ T Redo: (7) vulExists(google1, _G677)
+ T Exit: (7) vulExists(google1, pwExpired)
+ T Redo: (7) vulExists(google1, _G677)
+ T Redo: (7) vulExists(google1, userInPw)
+ T Redo: (7) vulExists(google1, _G677)
+ T Redo: (7) vulExists(google1, nameInPw)
+ T Redo: (7) vulExists(google1, _G677)
+ T Redo: (7) vulExists(google1, _G677)
+ T Exit: (7) vulExists(google1, userSimEmail)
+ T Redo: (7) vulExists(google1, _G677)
+ T Redo: (7) vulExists(google1, _G677)
+ T Redo: (7) vulExists(google1, _G677)
+ T Fail: (8) userPublic(google1)
+ T Call: (8) userPublic(google1)
+ T Call: (7) vulExists(google1, _G677)
+ T Exit: (6) accountConn(microsoft1, google1, username, same)
+ T Call: (6) accountConn(microsoft1, _G332, username, same)
+redos 2 = 0
+fails 2 = 0
+ T Fail: (7) vulExists(microsoft1, _G332)
+fails 2 = 1
+fails 2 = 1
+ T Redo: (7) vulExists(microsoft1, _G332)
+redos 2 = 1
+redoString 2 = vulExists(microsoft1,_G332)
+ T Redo: (7) vulExists(microsoft1, _G332)
+ T Redo: (7) vulExists(microsoft1, userInPw)
+ T Redo: (7) vulExists(microsoft1, _G332)
+ T Exit: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, _G332)
+ T Exit: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, _G332)
+ T Redo: (7) vulExists(microsoft1, _G332)
+ T Exit: (7) vulExists(microsoft1, userSimEmail)
+ T Redo: (7) vulExists(microsoft1, _G332)
+ T Redo: (7) vulExists(microsoft1, _G332)
+ T Redo: (7) vulExists(microsoft1, _G332)
+ T Fail: (8) userPublic(microsoft1)
+ T Call: (8) userPublic(microsoft1)
+ T Call: (7) vulExists(microsoft1, _G332)
+redos 2 = 0
+fails 2 = 0
+ T Call: (4) knows(attacker, microsoft1, username, [])
+ T Exit: (4) knows(attacker, microsoft1, password, [])
+2 output print
+ T Exit: (6) knowsAll(attacker, microsoft1, [name, birthday], [])
+2 output print
+ T Exit: (7) knowsAll(attacker, microsoft1, [birthday], [])
+2 output print
+ T Exit: (8) knowsAll(attacker, microsoft1, [], [])
+2 output print
+ T Call: (8) knowsAll(attacker, microsoft1, [], [])
+ T Exit: (8) knows(attacker, microsoft1, birthday, [])
+2 output print
+ T Exit: (11) publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university])
+2 output print
+ T Redo: (11) publicInfo(_G313, _G314)
+redos 2 = 1
+redoString 2 = publicInfo(_G313,_G314)
+ T Exit: (11) publicInfo(apple1, [])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(microsoft1, [name])
+ T Redo: (11) publicInfo(_G313, _G314)
+ T Exit: (11) publicInfo(google1, [name])
+ T Call: (11) publicInfo(_G313, _G314)
+redos 2 = 0
+ T Fail: (10) accountConn(microsoft1, _G314, birthday, same)
+fails 2 = 1
+fails 2 = 1
+ T Call: (10) accountConn(microsoft1, _G314, birthday, same)
+fails 2 = 0
+ T Fail: (11) vulExists(microsoft1, _G314)
+fails 2 = 1
+fails 2 = 1
+ T Redo: (11) vulExists(microsoft1, _G314)
+redos 2 = 1
+redoString 2 = vulExists(microsoft1,_G314)
+ T Redo: (11) vulExists(microsoft1, _G314)
+ T Redo: (11) vulExists(microsoft1, userInPw)
+ T Redo: (11) vulExists(microsoft1, _G314)
+ T Exit: (11) vulExists(microsoft1, weakPw)
+ T Redo: (11) vulExists(microsoft1, weakPw)
+ T Redo: (11) vulExists(microsoft1, _G314)
+ T Exit: (11) vulExists(microsoft1, nameInPw)
+ T Redo: (11) vulExists(microsoft1, nameInPw)
+ T Redo: (11) vulExists(microsoft1, _G314)
+ T Redo: (11) vulExists(microsoft1, _G314)
+ T Exit: (11) vulExists(microsoft1, userSimEmail)
+ T Redo: (11) vulExists(microsoft1, _G314)
+ T Redo: (11) vulExists(microsoft1, _G314)
+ T Redo: (11) vulExists(microsoft1, _G314)
+ T Fail: (12) userPublic(microsoft1)
+ T Call: (12) userPublic(microsoft1)
+ T Call: (11) vulExists(microsoft1, _G314)
+redos 2 = 0
+fails 2 = 0
+ T Call: (8) knows(attacker, microsoft1, birthday, [])
+ T Call: (7) knowsAll(attacker, microsoft1, [birthday], [])
+ T Exit: (7) knows(attacker, microsoft1, name, [])
+2 output print
+ T Exit: (10) publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university])
+2 output print
+ T Redo: (10) publicInfo(_G295, _G296)
+redos 2 = 1
+redoString 2 = publicInfo(_G295,_G296)
+ T Exit: (10) publicInfo(apple1, [])
+ T Redo: (10) publicInfo(_G295, _G296)
+ T Fail: (7) knowsAll(attacker, microsoft1, [birthday], [])
+ T Fail: (8) knows(attacker, microsoft1, birthday, [])
+ T Fail: (10) canRetrieve(microsoft1, birthday, [])
+ T Call: (10) canRetrieve(microsoft1, birthday, [])
+ T Exit: (11) publicInfo(twitter1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(steam1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(expedia1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(apple1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(microsoft1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(google1, [name])
+ T Call: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(twitter1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(steam1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(expedia1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Fail: (8) knowsAll(attacker, microsoft1, [], [])
+ T Redo: (8) knowsAll(attacker, microsoft1, [], [])
+ T Fail: (4) knows(attacker, microsoft1, username, [])
+ T Fail: (6) vulExists(microsoft1, userSimEmail)
+ T Redo: (6) vulExists(microsoft1, userSimEmail)
+ T Fail: (6) knows(attacker, microsoft1, email, [])
+ T Fail: (8) accountConn(microsoft1, _G629, email, same)
+ T Redo: (8) accountConn(microsoft1, _G629, email, same)
+ T Fail: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, userInPw)
+ T Redo: (9) vulExists(twitter1, userInPw)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Exit: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, weakPw)
+ T Exit: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, nameInPw)
+ T Redo: (9) vulExists(twitter1, nameInPw)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Exit: (9) vulExists(twitter1, commonPw)
+ T Exit: (9) vulExists(twitter1, commonPw)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Exit: (9) vulExists(twitter1, userSimEmail)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Exit: (9) vulExists(twitter1, userSimEmail)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Fail: (10) userPublic(twitter1)
+ T Call: (10) userPublic(twitter1)
+ T Call: (9) vulExists(twitter1, _G629)
+ T Exit: (8) accountConn(microsoft1, twitter1, email, same)
+ T Fail: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, userInPw)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, nameInPw)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Exit: (9) vulExists(steam1, publicUser)
+ T Exit: (10) userPublic(steam1)
+ T Call: (10) userPublic(steam1)
+ T Call: (9) vulExists(steam1, _G629)
+ T Exit: (8) accountConn(microsoft1, steam1, email, same)
+ T Fail: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Fail: (10) userPublic(expedia1)
+ T Call: (10) userPublic(expedia1)
+ T Call: (9) vulExists(expedia1, _G629)
+ T Exit: (8) accountConn(microsoft1, expedia1, email, same)
+ T Fail: (9) vulExists(facebook1, _G629)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Redo: (9) vulExists(facebook1, userInPw)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (9) vulExists(facebook1, weakPw)
+ T Redo: (9) vulExists(facebook1, weakPw)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Redo: (9) vulExists(facebook1, nameInPw)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (9) vulExists(facebook1, commonPw)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (9) vulExists(facebook1, userSimEmail)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (9) vulExists(facebook1, userSimEmail)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (2) hasAccess(microsoft1, attacker)
+3 output print
+ T Exit: (3) hasAccessTo(microsoft1, attacker, [])
+3 output print
+ T Exit: (4) knows(attacker, microsoft1, username, [])
+3 output print
+ T Exit: (6) knows(attacker, microsoft1, email, [])
+3 output print
+ T Exit: (9) vulExists(facebook1, publicEmail)
+3 output print
+ T Redo: (9) vulExists(facebook1, _G629)
+redos 3 = 1
+redoString 3 = vulExists(facebook1,_G629)
+ T Fail: (10) userPublic(facebook1)
+ T Call: (10) userPublic(facebook1)
+ T Call: (9) vulExists(facebook1, _G629)
+redos 3 = 0
+ T Exit: (8) accountConn(microsoft1, facebook1, email, same)
+3 output print
+ T Fail: (9) vulExists(apple1, _G629)
+fails 3 = 1
+fails 3 = 1
+ T Redo: (9) vulExists(apple1, _G629)
+redos 3 = 1
+redoString 3 = vulExists(apple1,_G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, userInPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, weakPw)
+ T Redo: (9) vulExists(apple1, weakPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, nameInPw)
+ T Redo: (9) vulExists(apple1, nameInPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, userSimEmail)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, userSimEmail)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Fail: (10) userPublic(apple1)
+ T Call: (10) userPublic(apple1)
+ T Call: (9) vulExists(apple1, _G629)
+redos 3 = 0
+fails 3 = 0
+ T Exit: (8) accountConn(microsoft1, apple1, email, same)
+3 output print
+ T Call: (8) accountConn(microsoft1, _G629, email, same)
+ T Fail: (9) vulExists(microsoft1, _G629)
+fails 3 = 1
+fails 3 = 1
+ T Redo: (9) vulExists(microsoft1, _G629)
+redos 3 = 1
+redoString 3 = vulExists(microsoft1,_G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, userInPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, weakPw)
+ T Redo: (9) vulExists(microsoft1, weakPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, nameInPw)
+ T Redo: (9) vulExists(microsoft1, nameInPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, userSimEmail)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Fail: (10) userPublic(microsoft1)
+ T Call: (10) userPublic(microsoft1)
+ T Call: (9) vulExists(microsoft1, _G629)
+redos 3 = 0
+fails 3 = 0
+ T Call: (6) knows(attacker, microsoft1, email, [])
+ T Exit: (6) vulExists(microsoft1, userSimEmail)
+3 output print
+ T Redo: (6) vulExists(microsoft1, userSimEmail)
+redos 3 = 1
+redoString 3 = vulExists(microsoft1,userSimEmail)
+ T Call: (6) vulExists(microsoft1, userSimEmail)
+redos 3 = 0
+ T Fail: (6) accountConn(microsoft1, _G317, username, same)
+fails 3 = 1
+fails 3 = 1
+ T Redo: (6) accountConn(microsoft1, _G317, username, same)
+redos 3 = 1
+redoString 3 = accountConn(microsoft1,_G317,username,same)
+ T Fail: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, userInPw)
+ T Redo: (7) vulExists(twitter1, userInPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, weakPw)
+ T Exit: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, nameInPw)
+ T Redo: (7) vulExists(twitter1, nameInPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, commonPw)
+ T Exit: (7) vulExists(twitter1, commonPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, userSimEmail)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, userSimEmail)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Fail: (8) userPublic(twitter1)
+ T Call: (8) userPublic(twitter1)
+ T Call: (7) vulExists(twitter1, _G650)
+ T Exit: (6) accountConn(microsoft1, twitter1, username, same)
+ T Fail: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, userInPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, weakPw)
+ T Redo: (7) vulExists(facebook1, weakPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, nameInPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, commonPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, userSimEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, userSimEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, publicEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Fail: (8) userPublic(facebook1)
+ T Call: (8) userPublic(facebook1)
+ T Call: (7) vulExists(facebook1, _G650)
+ T Exit: (6) accountConn(microsoft1, facebook1, username, same)
+ T Fail: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, userInPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Fail: (8) userPublic(apple1)
+ T Call: (8) userPublic(apple1)
+ T Call: (7) vulExists(apple1, _G665)
+ T Exit: (6) accountConn(microsoft1, apple1, username, same)
+ T Fail: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Exit: (7) vulExists(google1, pwExpired)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, userInPw)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, nameInPw)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Exit: (7) vulExists(google1, userSimEmail)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Fail: (8) userPublic(google1)
+ T Call: (8) userPublic(google1)
+ T Call: (7) vulExists(google1, _G662)
+ T Exit: (6) accountConn(microsoft1, google1, username, same)
+ T Call: (6) accountConn(microsoft1, _G317, username, same)
+redos 3 = 0
+fails 3 = 0
+ T Fail: (7) vulExists(microsoft1, _G317)
+fails 3 = 1
+fails 3 = 1
+ T Redo: (7) vulExists(microsoft1, _G317)
+redos 3 = 1
+redoString 3 = vulExists(microsoft1,_G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, userInPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, userSimEmail)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Fail: (8) userPublic(microsoft1)
+ T Call: (8) userPublic(microsoft1)
+ T Call: (7) vulExists(microsoft1, _G317)
+redos 3 = 0
+fails 3 = 0
+ T Call: (4) knows(attacker, microsoft1, username, [])
+ T Exit: (4) knows(attacker, microsoft1, password, [])
+3 output print
+ T Exit: (6) knowsAll(attacker, microsoft1, [name, birthday], [])
+3 output print
+ T Exit: (7) knowsAll(attacker, microsoft1, [birthday], [])
+3 output print
+ T Exit: (8) knowsAll(attacker, microsoft1, [], [])
+3 output print
+ T Call: (8) knowsAll(attacker, microsoft1, [], [])
+ T Exit: (8) knows(attacker, microsoft1, birthday, [])
+3 output print
+ T Exit: (11) publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university])
+3 output print
+ T Redo: (11) publicInfo(_G298, _G299)
+redos 3 = 1
+redoString 3 = publicInfo(_G298,_G299)
+ T Exit: (11) publicInfo(apple1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(microsoft1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(google1, [name])
+ T Call: (11) publicInfo(_G298, _G299)
+redos 3 = 0
+ T Fail: (10) accountConn(microsoft1, _G299, birthday, same)
+fails 3 = 1
+fails 3 = 1
+ T Call: (10) accountConn(microsoft1, _G299, birthday, same)
+fails 3 = 0
+ T Fail: (11) vulExists(microsoft1, _G299)
+fails 3 = 1
+fails 3 = 1
+ T Redo: (11) vulExists(microsoft1, _G299)
+redos 3 = 1
+redoString 3 = vulExists(microsoft1,_G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, userInPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, weakPw)
+ T Redo: (11) vulExists(microsoft1, weakPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, nameInPw)
+ T Redo: (11) vulExists(microsoft1, nameInPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, userSimEmail)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Fail: (12) userPublic(microsoft1)
+ T Call: (12) userPublic(microsoft1)
+ T Call: (11) vulExists(microsoft1, _G299)
+redos 3 = 0
+fails 3 = 0
+ T Call: (8) knows(attacker, microsoft1, birthday, [])
+ T Call: (7) knowsAll(attacker, microsoft1, [birthday], [])
+ T Exit: (7) knows(attacker, microsoft1, name, [])
+3 output print
+ T Exit: (10) publicInfo(microsoft1, [name])
+3 output print
+ T Redo: (10) publicInfo(_G295, _G296)
+redos 3 = 1
+redoString 3 = publicInfo(_G295,_G296)
+ T Fail: (7) knowsAll(attacker, microsoft1, [birthday], [])
+ T Fail: (8) knows(attacker, microsoft1, birthday, [])
+ T Fail: (10) canRetrieve(microsoft1, birthday, [])
+ T Call: (10) canRetrieve(microsoft1, birthday, [])
+ T Exit: (11) publicInfo(twitter1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(steam1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(expedia1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(apple1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(microsoft1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(google1, [name])
+ T Call: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(twitter1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(steam1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(expedia1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Fail: (8) knowsAll(attacker, microsoft1, [], [])
+ T Redo: (8) knowsAll(attacker, microsoft1, [], [])
+ T Fail: (4) knows(attacker, microsoft1, username, [])
+ T Fail: (6) vulExists(microsoft1, userSimEmail)
+ T Redo: (6) vulExists(microsoft1, userSimEmail)
+ T Fail: (6) knows(attacker, microsoft1, email, [])
+ T Fail: (8) accountConn(microsoft1, _G629, email, same)
+ T Redo: (8) accountConn(microsoft1, _G629, email, same)
+ T Fail: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, userInPw)
+ T Redo: (9) vulExists(twitter1, userInPw)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Exit: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, weakPw)
+ T Exit: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, weakPw)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, nameInPw)
+ T Redo: (9) vulExists(twitter1, nameInPw)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Exit: (9) vulExists(twitter1, commonPw)
+ T Exit: (9) vulExists(twitter1, commonPw)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Exit: (9) vulExists(twitter1, userSimEmail)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Exit: (9) vulExists(twitter1, userSimEmail)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Redo: (9) vulExists(twitter1, _G629)
+ T Fail: (10) userPublic(twitter1)
+ T Call: (10) userPublic(twitter1)
+ T Call: (9) vulExists(twitter1, _G629)
+ T Exit: (8) accountConn(microsoft1, twitter1, email, same)
+ T Fail: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, userInPw)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, nameInPw)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Redo: (9) vulExists(steam1, _G629)
+ T Exit: (9) vulExists(steam1, publicUser)
+ T Exit: (10) userPublic(steam1)
+ T Call: (10) userPublic(steam1)
+ T Call: (9) vulExists(steam1, _G629)
+ T Exit: (8) accountConn(microsoft1, steam1, email, same)
+ T Fail: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Redo: (9) vulExists(expedia1, _G629)
+ T Fail: (10) userPublic(expedia1)
+ T Call: (10) userPublic(expedia1)
+ T Call: (9) vulExists(expedia1, _G629)
+ T Exit: (8) accountConn(microsoft1, expedia1, email, same)
+ T Fail: (9) vulExists(facebook1, _G629)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Redo: (9) vulExists(facebook1, userInPw)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (9) vulExists(facebook1, weakPw)
+ T Redo: (9) vulExists(facebook1, weakPw)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Redo: (9) vulExists(facebook1, nameInPw)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (9) vulExists(facebook1, commonPw)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (9) vulExists(facebook1, userSimEmail)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (9) vulExists(facebook1, userSimEmail)
+ T Redo: (9) vulExists(facebook1, _G629)
+ T Exit: (2) hasAccess(microsoft1, attacker)
+4 output print
+ T Exit: (3) hasAccessTo(microsoft1, attacker, [])
+4 output print
+ T Exit: (4) knows(attacker, microsoft1, username, [])
+4 output print
+ T Exit: (6) knows(attacker, microsoft1, email, [])
+4 output print
+ T Exit: (9) vulExists(facebook1, publicEmail)
+4 output print
+ T Redo: (9) vulExists(facebook1, _G629)
+redos 4 = 1
+redoString 4 = vulExists(facebook1,_G629)
+ T Fail: (10) userPublic(facebook1)
+ T Call: (10) userPublic(facebook1)
+ T Call: (9) vulExists(facebook1, _G629)
+redos 4 = 0
+ T Exit: (8) accountConn(microsoft1, facebook1, email, same)
+4 output print
+ T Fail: (9) vulExists(apple1, _G629)
+fails 4 = 1
+fails 4 = 1
+ T Redo: (9) vulExists(apple1, _G629)
+redos 4 = 1
+redoString 4 = vulExists(apple1,_G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, userInPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, weakPw)
+ T Redo: (9) vulExists(apple1, weakPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, nameInPw)
+ T Redo: (9) vulExists(apple1, nameInPw)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, userSimEmail)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Exit: (9) vulExists(apple1, userSimEmail)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Redo: (9) vulExists(apple1, _G629)
+ T Fail: (10) userPublic(apple1)
+ T Call: (10) userPublic(apple1)
+ T Call: (9) vulExists(apple1, _G629)
+redos 4 = 0
+fails 4 = 0
+ T Exit: (8) accountConn(microsoft1, apple1, email, same)
+4 output print
+ T Call: (8) accountConn(microsoft1, _G629, email, same)
+ T Fail: (9) vulExists(microsoft1, _G629)
+fails 4 = 1
+fails 4 = 1
+ T Redo: (9) vulExists(microsoft1, _G629)
+redos 4 = 1
+redoString 4 = vulExists(microsoft1,_G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, userInPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, weakPw)
+ T Redo: (9) vulExists(microsoft1, weakPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, nameInPw)
+ T Redo: (9) vulExists(microsoft1, nameInPw)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Exit: (9) vulExists(microsoft1, userSimEmail)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Redo: (9) vulExists(microsoft1, _G629)
+ T Fail: (10) userPublic(microsoft1)
+ T Call: (10) userPublic(microsoft1)
+ T Call: (9) vulExists(microsoft1, _G629)
+redos 4 = 0
+fails 4 = 0
+ T Call: (6) knows(attacker, microsoft1, email, [])
+ T Exit: (6) vulExists(microsoft1, userSimEmail)
+4 output print
+ T Redo: (6) vulExists(microsoft1, userSimEmail)
+redos 4 = 1
+redoString 4 = vulExists(microsoft1,userSimEmail)
+ T Call: (6) vulExists(microsoft1, userSimEmail)
+redos 4 = 0
+ T Fail: (6) accountConn(microsoft1, _G317, username, same)
+fails 4 = 1
+fails 4 = 1
+ T Redo: (6) accountConn(microsoft1, _G317, username, same)
+redos 4 = 1
+redoString 4 = accountConn(microsoft1,_G317,username,same)
+ T Fail: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, userInPw)
+ T Redo: (7) vulExists(twitter1, userInPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, weakPw)
+ T Exit: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, weakPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, nameInPw)
+ T Redo: (7) vulExists(twitter1, nameInPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, commonPw)
+ T Exit: (7) vulExists(twitter1, commonPw)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, userSimEmail)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Exit: (7) vulExists(twitter1, userSimEmail)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Redo: (7) vulExists(twitter1, _G650)
+ T Fail: (8) userPublic(twitter1)
+ T Call: (8) userPublic(twitter1)
+ T Call: (7) vulExists(twitter1, _G650)
+ T Exit: (6) accountConn(microsoft1, twitter1, username, same)
+ T Fail: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, userInPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, weakPw)
+ T Redo: (7) vulExists(facebook1, weakPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Redo: (7) vulExists(facebook1, nameInPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, commonPw)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, userSimEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, userSimEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Exit: (7) vulExists(facebook1, publicEmail)
+ T Redo: (7) vulExists(facebook1, _G650)
+ T Fail: (8) userPublic(facebook1)
+ T Call: (8) userPublic(facebook1)
+ T Call: (7) vulExists(facebook1, _G650)
+ T Exit: (6) accountConn(microsoft1, facebook1, username, same)
+ T Fail: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, userInPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Redo: (7) vulExists(apple1, _G665)
+ T Fail: (8) userPublic(apple1)
+ T Call: (8) userPublic(apple1)
+ T Call: (7) vulExists(apple1, _G665)
+ T Exit: (6) accountConn(microsoft1, apple1, username, same)
+ T Fail: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Exit: (7) vulExists(google1, pwExpired)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, userInPw)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, nameInPw)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Exit: (7) vulExists(google1, userSimEmail)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Redo: (7) vulExists(google1, _G662)
+ T Fail: (8) userPublic(google1)
+ T Call: (8) userPublic(google1)
+ T Call: (7) vulExists(google1, _G662)
+ T Exit: (6) accountConn(microsoft1, google1, username, same)
+ T Call: (6) accountConn(microsoft1, _G317, username, same)
+redos 4 = 0
+fails 4 = 0
+ T Fail: (7) vulExists(microsoft1, _G317)
+fails 4 = 1
+fails 4 = 1
+ T Redo: (7) vulExists(microsoft1, _G317)
+redos 4 = 1
+redoString 4 = vulExists(microsoft1,_G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, userInPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Exit: (7) vulExists(microsoft1, userSimEmail)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Redo: (7) vulExists(microsoft1, _G317)
+ T Fail: (8) userPublic(microsoft1)
+ T Call: (8) userPublic(microsoft1)
+ T Call: (7) vulExists(microsoft1, _G317)
+redos 4 = 0
+fails 4 = 0
+ T Call: (4) knows(attacker, microsoft1, username, [])
+ T Exit: (4) knows(attacker, microsoft1, password, [])
+4 output print
+ T Exit: (6) knowsAll(attacker, microsoft1, [name, birthday], [])
+4 output print
+ T Exit: (7) knowsAll(attacker, microsoft1, [birthday], [])
+4 output print
+ T Exit: (8) knowsAll(attacker, microsoft1, [], [])
+4 output print
+ T Call: (8) knowsAll(attacker, microsoft1, [], [])
+ T Exit: (8) knows(attacker, microsoft1, birthday, [])
+4 output print
+ T Exit: (11) publicInfo(facebook1, [name, birthday, current_city, hometown, workplace, university])
+4 output print
+ T Redo: (11) publicInfo(_G298, _G299)
+redos 4 = 1
+redoString 4 = publicInfo(_G298,_G299)
+ T Exit: (11) publicInfo(apple1, [])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(microsoft1, [name])
+ T Redo: (11) publicInfo(_G298, _G299)
+ T Exit: (11) publicInfo(google1, [name])
+ T Call: (11) publicInfo(_G298, _G299)
+redos 4 = 0
+ T Fail: (10) accountConn(microsoft1, _G299, birthday, same)
+fails 4 = 1
+fails 4 = 1
+ T Call: (10) accountConn(microsoft1, _G299, birthday, same)
+fails 4 = 0
+ T Fail: (11) vulExists(microsoft1, _G299)
+fails 4 = 1
+fails 4 = 1
+ T Redo: (11) vulExists(microsoft1, _G299)
+redos 4 = 1
+redoString 4 = vulExists(microsoft1,_G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, userInPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, weakPw)
+ T Redo: (11) vulExists(microsoft1, weakPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, nameInPw)
+ T Redo: (11) vulExists(microsoft1, nameInPw)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Exit: (11) vulExists(microsoft1, userSimEmail)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Redo: (11) vulExists(microsoft1, _G299)
+ T Fail: (12) userPublic(microsoft1)
+ T Call: (12) userPublic(microsoft1)
+ T Call: (11) vulExists(microsoft1, _G299)
+redos 4 = 0
+fails 4 = 0
+ T Call: (8) knows(attacker, microsoft1, birthday, [])
+ T Call: (7) knowsAll(attacker, microsoft1, [birthday], [])
+ T Exit: (7) knows(attacker, microsoft1, name, [])
+4 output print
+ T Exit: (10) publicInfo(google1, [name])
+4 output print
+ T Call: (10) publicInfo(_G295, _G296)
+redos 0 = 0
+redos 1 = 0
+redos 2 = 0
+redos 3 = 0
+ T Fail: (9) accountConn(microsoft1, _G296, name, same)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+fails 2 = 1
+fails 2 = 1
+fails 3 = 1
+fails 3 = 1
+fails 4 = 1
+fails 4 = 1
+ T Call: (9) accountConn(microsoft1, _G296, name, same)
+fails 0 = 0
+fails 1 = 0
+fails 2 = 0
+fails 3 = 0
+fails 4 = 0
+ T Fail: (10) vulExists(microsoft1, _G296)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+fails 2 = 1
+fails 2 = 1
+fails 3 = 1
+fails 3 = 1
+fails 4 = 1
+fails 4 = 1
+ T Redo: (10) vulExists(microsoft1, _G296)
+redos 0 = 1
+redoString 0 = vulExists(microsoft1,_G296)
+redos 1 = 1
+redoString 1 = vulExists(microsoft1,_G296)
+redos 2 = 1
+redoString 2 = vulExists(microsoft1,_G296)
+redos 3 = 1
+redoString 3 = vulExists(microsoft1,_G296)
+redos 4 = 1
+redoString 4 = vulExists(microsoft1,_G296)
+ T Redo: (10) vulExists(microsoft1, _G296)
+ T Redo: (10) vulExists(microsoft1, userInPw)
+ T Redo: (10) vulExists(microsoft1, _G296)
+ T Exit: (10) vulExists(microsoft1, weakPw)
+ T Redo: (10) vulExists(microsoft1, weakPw)
+ T Redo: (10) vulExists(microsoft1, _G296)
+ T Exit: (10) vulExists(microsoft1, nameInPw)
+ T Redo: (10) vulExists(microsoft1, nameInPw)
+ T Redo: (10) vulExists(microsoft1, _G296)
+ T Redo: (10) vulExists(microsoft1, _G296)
+ T Exit: (10) vulExists(microsoft1, userSimEmail)
+ T Redo: (10) vulExists(microsoft1, _G296)
+ T Redo: (10) vulExists(microsoft1, _G296)
+ T Redo: (10) vulExists(microsoft1, _G296)
+ T Fail: (11) userPublic(microsoft1)
+ T Call: (11) userPublic(microsoft1)
+ T Call: (10) vulExists(microsoft1, _G296)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+redos 2 = 0
+fails 2 = 0
+redos 3 = 0
+fails 3 = 0
+redos 4 = 0
+fails 4 = 0
+ T Call: (7) knows(attacker, microsoft1, name, [])
+ T Call: (6) knowsAll(attacker, microsoft1, [name, birthday], [])
+ T Exit: (6) pwContains(microsoft1, [name, birthday])
+0 output print
+1 output print
+2 output print
+3 output print
+4 output print
+ T Call: (6) pwContains(microsoft1, _G290)
+ T Fail: (6) vulExists(microsoft1, userInPw)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+fails 2 = 1
+fails 2 = 1
+fails 3 = 1
+fails 3 = 1
+fails 4 = 1
+fails 4 = 1
+ T Redo: (6) vulExists(microsoft1, userInPw)
+redos 0 = 1
+redoString 0 = vulExists(microsoft1,userInPw)
+redos 1 = 1
+redoString 1 = vulExists(microsoft1,userInPw)
+redos 2 = 1
+redoString 2 = vulExists(microsoft1,userInPw)
+redos 3 = 1
+redoString 3 = vulExists(microsoft1,userInPw)
+redos 4 = 1
+redoString 4 = vulExists(microsoft1,userInPw)
+ T Redo: (6) vulExists(microsoft1, userInPw)
+ T Call: (6) vulExists(microsoft1, userInPw)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+redos 2 = 0
+fails 2 = 0
+redos 3 = 0
+fails 3 = 0
+redos 4 = 0
+fails 4 = 0
+ T Fail: (6) accountConn(microsoft1, _G290, password, same)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+fails 2 = 1
+fails 2 = 1
+fails 3 = 1
+fails 3 = 1
+fails 4 = 1
+fails 4 = 1
+ T Redo: (6) accountConn(microsoft1, _G290, password, same)
+redos 0 = 1
+redoString 0 = accountConn(microsoft1,_G290,password,same)
+redos 1 = 1
+redoString 1 = accountConn(microsoft1,_G290,password,same)
+redos 2 = 1
+redoString 2 = accountConn(microsoft1,_G290,password,same)
+redos 3 = 1
+redoString 3 = accountConn(microsoft1,_G290,password,same)
+redos 4 = 1
+redoString 4 = accountConn(microsoft1,_G290,password,same)
+ T Fail: (7) vulExists(apple1, _G461)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Redo: (7) vulExists(apple1, userInPw)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Exit: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, weakPw)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Exit: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, nameInPw)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Exit: (7) vulExists(apple1, userSimEmail)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Redo: (7) vulExists(apple1, _G461)
+ T Fail: (8) userPublic(apple1)
+ T Call: (8) userPublic(apple1)
+ T Call: (7) vulExists(apple1, _G461)
+ T Exit: (6) accountConn(microsoft1, apple1, password, same)
+ T Call: (6) accountConn(microsoft1, _G290, password, same)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+redos 2 = 0
+fails 2 = 0
+redos 3 = 0
+fails 3 = 0
+redos 4 = 0
+fails 4 = 0
+ T Fail: (7) vulExists(microsoft1, _G290)
+fails 0 = 1
+fails 0 = 1
+fails 1 = 1
+fails 1 = 1
+fails 2 = 1
+fails 2 = 1
+fails 3 = 1
+fails 3 = 1
+fails 4 = 1
+fails 4 = 1
+ T Redo: (7) vulExists(microsoft1, _G290)
+redos 0 = 1
+redoString 0 = vulExists(microsoft1,_G290)
+redos 1 = 1
+redoString 1 = vulExists(microsoft1,_G290)
+redos 2 = 1
+redoString 2 = vulExists(microsoft1,_G290)
+redos 3 = 1
+redoString 3 = vulExists(microsoft1,_G290)
+redos 4 = 1
+redoString 4 = vulExists(microsoft1,_G290)
+ T Redo: (7) vulExists(microsoft1, _G290)
+ T Redo: (7) vulExists(microsoft1, userInPw)
+ T Redo: (7) vulExists(microsoft1, _G290)
+ T Exit: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, weakPw)
+ T Redo: (7) vulExists(microsoft1, _G290)
+ T Exit: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, nameInPw)
+ T Redo: (7) vulExists(microsoft1, _G290)
+ T Redo: (7) vulExists(microsoft1, _G290)
+ T Exit: (7) vulExists(microsoft1, userSimEmail)
+ T Redo: (7) vulExists(microsoft1, _G290)
+ T Redo: (7) vulExists(microsoft1, _G290)
+ T Redo: (7) vulExists(microsoft1, _G290)
+ T Fail: (8) userPublic(microsoft1)
+ T Call: (8) userPublic(microsoft1)
+ T Call: (7) vulExists(microsoft1, _G290)
+redos 0 = 0
+fails 0 = 0
+redos 1 = 0
+fails 1 = 0
+redos 2 = 0
+fails 2 = 0
+redos 3 = 0
+fails 3 = 0
+redos 4 = 0
+fails 4 = 0
+ T Call: (4) knows(attacker, microsoft1, password, [])
+ T Redo: (3) hasAccessTo(microsoft1, attacker, [])
+redos 0 = 1
+redoString 0 = hasAccessTo(microsoft1,attacker,[])
+redos 1 = 1
+redoString 1 = hasAccessTo(microsoft1,attacker,[])
+redos 2 = 1
+redoString 2 = hasAccessTo(microsoft1,attacker,[])
+redos 3 = 1
+redoString 3 = hasAccessTo(microsoft1,attacker,[])
+redos 4 = 1
+redoString 4 = hasAccessTo(microsoft1,attacker,[])
+ T Call: (3) hasAccessTo(microsoft1, attacker, [])
+redos 0 = 0
+redos 1 = 0
+redos 2 = 0
+redos 3 = 0
+redos 4 = 0
+ T Call: (2) hasAccess(microsoft1, attacker)

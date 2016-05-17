@@ -5,6 +5,7 @@
 % -- allow/2
 % currently only allowing user access
 allow(_, user).
+allow(default, _).
 
 
 % -- policyViolation/2

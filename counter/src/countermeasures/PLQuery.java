@@ -51,6 +51,22 @@ public class PLQuery {
 		this.query("noprotocol");
 	}
 	
+	public void printAllOutput(String function, Term[] terms) {
+		printFunction(function, terms);
+		int n = 1;
+		this.query("protocol('outputall.txt').");
+		Query q = new Query(function, terms);
+		q.open();
+		Map<String, Term> solution = q.getSolution();
+		printSolution(terms, solution);
+		while (q.hasNext()){
+			n++;
+			solution = q.nextSolution();
+			printSolution(terms, solution);
+		}
+		this.query("noprotocol");
+	}
+	
 	private void printFunction(String function, Term[] terms) {
 		String qString = "?- " + function + "(";
 		for (int i = 0; i < terms.length; i++) {

@@ -24,9 +24,9 @@ public class Test {
 		q.query("trace(pwContains/2)");
 		q.printOutput("policyViolation", new Term[] {
 				new Atom("apple1"), new Atom("attacker")});
-		GraphGenerator.makeTree("output1.txt");
-		GraphGenerator.dotRepresentation("tree1.txt");
-		GraphGenerator.dotFigure("tree1.txt");
+		GraphGenerator.makeTree("output1.txt", "tree1.txt");
+		GraphGenerator.dotRepresentation("tree1.txt", "graph1.dot");
+		GraphGenerator.dotFigure("tree1.txt", "ag1");
 	}
 	
 

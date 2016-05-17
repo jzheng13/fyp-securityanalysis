@@ -1,4 +1,4 @@
-:- ensure_loaded(['utils.pl', 'user.pl', 'accounts.pl', 'hypothesis.pl']).
+:- ensure_loaded(['utils.pl', 'user.pl', 'accounts_counter.pl', 'hypothesis.pl']).
 
 :- dynamic bugHyp/4.
 
