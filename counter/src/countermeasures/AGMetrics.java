@@ -1,6 +1,6 @@
 package countermeasures;
 
-public class MCS {
+public class AGMetrics {
 	
 	public static void getMinCritSet(String filename) {
 		
