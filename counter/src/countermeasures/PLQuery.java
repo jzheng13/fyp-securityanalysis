@@ -36,7 +36,7 @@ public class PLQuery {
 	public void printOutput(String function, Term[] terms) {
 		printFunction(function, terms);
 		int n = 1;
-		this.query("protocol('output" + n + ".txt').");
+		this.query("protocol('temp\\output" + n + ".txt').");
 		Query q = new Query(function, terms);
 		q.open();
 		Map<String, Term> solution = q.getSolution();
@@ -54,7 +54,7 @@ public class PLQuery {
 	public void printAllOutput(String function, Term[] terms) {
 		printFunction(function, terms);
 		int n = 1;
-		this.query("protocol('outputall.txt').");
+		this.query("protocol('../counter/temp/outputall.txt').");
 		Query q = new Query(function, terms);
 		q.open();
 		Map<String, Term> solution = q.getSolution();

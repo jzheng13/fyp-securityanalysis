@@ -2,6 +2,7 @@ package countermeasures;
 
 import org.jpl7.Atom;
 import org.jpl7.Term;
+import org.jpl7.Variable;
 
 public class TestAllSolutions {
 	
@@ -28,8 +29,8 @@ public class TestAllSolutions {
 		q.query("trace(privateInfo/2)");
 		q.query("trace(pwContains/2)");
 		q.printAllOutput("policyViolation", new Term[] {
-				new Atom("microsoft1"), new Atom("attacker")});
-		//GraphGenerator.makeTreeAll("outputall.txt", "treeall.txt");
+				new Variable("X"), new Atom("attacker")});
+		GraphGenerator.makeTreeAll("outputall.txt", "treeall.txt");
 		GraphGenerator.dotRepresentationAll("treeall.txt", "graphall.dot");
 		// GraphGenerator.dotFigure("treeall.txt", "agall");
 	}

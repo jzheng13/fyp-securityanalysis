@@ -1,0 +1,8 @@
+2 hasAccess(apple1,attacker)
+3 hasAccessTo(apple1,attacker,[])
+4 knows(attacker,apple1,username,[])
+6 knows(attacker,apple1,email,[])
+9 vulExists(facebook1,publicEmail)
+8 accountConn(apple1,facebook1,email,same)
+8 accountConn(apple1,microsoft1,email,same)
+6 vulExists(apple1,userSimEmail)

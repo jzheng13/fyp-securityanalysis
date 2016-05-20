@@ -1,4 +1,4 @@
-:- ensure_loaded(['attacker']).
+:- ensure_loaded(['attacker_tabled']).
 
 %% Example for test database : Security Policy %%
 

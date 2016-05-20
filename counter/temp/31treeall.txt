@@ -1,0 +1,2 @@
+2 hasAccess(default,attacker)
+3 hasAccessTo(default,attacker,[])

@@ -15,7 +15,7 @@ import java.util.Stack;
 public class GraphGenerator {
 
 	public static void makeTree(String src, String dest){
-		Path path = Paths.get(src);
+		Path path = Paths.get("temp\\" + src);
 		Stack<String> reversed = new Stack<String>();
 
 		try (BufferedReader reader = Files.newBufferedReader(path)) {
@@ -28,7 +28,7 @@ public class GraphGenerator {
 		}
 		
 		try {
-			PrintWriter writer = new PrintWriter(dest);
+			PrintWriter writer = new PrintWriter("temp\\" + dest);
 			PrintWriter debug = new PrintWriter("debug_single.txt");
 		    int minLvl = 100;
 		    int fail = 0;
@@ -95,7 +95,7 @@ public class GraphGenerator {
 	}
 	
 	public static void makeTreeAll(String src, String dest){
-		Path path = Paths.get(src);
+		Path path = Paths.get("temp\\" + src);
 		Stack<String> reversed = new Stack<String>();
 
 		try (BufferedReader reader = Files.newBufferedReader(path)) {
@@ -115,7 +115,7 @@ public class GraphGenerator {
 			List<String> redoStrings = new ArrayList<String>();
 			int n = 0;
 			int minLvl = 100;
-			writers.add(new PrintWriter(n + dest));
+			writers.add(new PrintWriter("temp\\" + n + dest));
 		    fails.add(0);
 		    redos.add(0);
 		    redoStrings.add("");
@@ -127,7 +127,6 @@ public class GraphGenerator {
 		    	if (elements[2].equals("Exit:") && lvl == minLvl) {
 		    		break;
 		    	} else {
-		    		System.out.println(start);
 		    		reversed.pop();
 		    	}
 		    }
@@ -150,7 +149,7 @@ public class GraphGenerator {
 	        	if (lvl == minLvl && elements[2].equals("Exit:")) {
 	        		n++;
 	        		writers.get(n - 1).close();
-	        		writers.add(new PrintWriter(n + dest));
+	        		writers.add(new PrintWriter("temp\\" + n + dest));
 	    		    fails.add(0);
 	    		    redos.add(0);
 	    		    redoStrings.add("");
@@ -212,7 +211,7 @@ public class GraphGenerator {
 	}
 	
 	public static void dotRepresentation(String src, String dest) {
-		Path path = Paths.get(src);
+		Path path = Paths.get("temp\\" + src);
 		List<String> dotRep = new ArrayList<String>();
 		try (BufferedReader reader = Files.newBufferedReader(path)) {
 		    String line = null;
@@ -257,7 +256,7 @@ public class GraphGenerator {
 		}
 		Runtime rt = Runtime.getRuntime();
 		try {
-			Process p = rt.exec("dot -Tpng " + dest + " > ag1.png", null, 
+			Process p = rt.exec("dot -Tpng temp\\" + dest + " > ag1.png", null, 
 					new File(System.getProperty("user.dir")));
 		} catch (IOException e) {
 			System.err.format(e.getMessage());
@@ -266,7 +265,7 @@ public class GraphGenerator {
 	
 	public static void dotRepresentationAll(String src, String dest) {
 		int n = 0;
-		Path path = Paths.get(n + src);
+		Path path = Paths.get("temp\\" + n + src);
 		List<String> dotRep = new ArrayList<String>();
 		while (Files.exists(path)) {
 			try (BufferedReader reader = Files.newBufferedReader(path)) {
@@ -299,11 +298,11 @@ public class GraphGenerator {
 			    System.err.format(x.getMessage());
 			}
 			n++;
-			path = Paths.get(n + src);
+			path = Paths.get("temp\\" + n + src);
 		}
 	
 		try {
-			PrintWriter writer = new PrintWriter(dest);
+			PrintWriter writer = new PrintWriter("temp\\" + dest);
 			writer.println("digraph G {");
 			while (!dotRep.isEmpty()){
 				writer.println(dotRep.remove(0) + ";");
@@ -315,7 +314,7 @@ public class GraphGenerator {
 		}
 		Runtime rt = Runtime.getRuntime();
 		try {
-			Process p = rt.exec("dot -Tpng " + dest + " > ag1.png", null, 
+			Process p = rt.exec("dot -Tpng temp\\" + dest + " > ag1.png", null, 
 					new File(System.getProperty("user.dir")));
 		} catch (IOException e) {
 			System.err.format(e.getMessage());
@@ -323,7 +322,7 @@ public class GraphGenerator {
 	}
 	
 	public static void dotFigure(String src, String dest) {
-		Path path = Paths.get(src);
+		Path path = Paths.get("temp\\" + src);
 		GraphViz graph = new GraphViz();
 		graph.addln(graph.start_graph());
 		try (BufferedReader reader = Files.newBufferedReader(path)) {
@@ -359,7 +358,7 @@ public class GraphGenerator {
 		System.out.println(graph.getDotSource());
 		// String type = "png";
 		// String representationType = "dot";
-		// File out = new File(dest + type);
+		// File out = new File("temp\\" + dest + type);
 		// graph.writeGraphToFile(graph.getGraph(graph.getDotSource(), type, 
 		//	representationType), out);
 	}

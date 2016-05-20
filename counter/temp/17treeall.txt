@@ -1,0 +1,6 @@
+2 hasAccess(facebook1,attacker)
+3 hasAccessTo(facebook1,attacker,[])
+4 knows(attacker,facebook1,username,[])
+6 knows(attacker,facebook1,email,[])
+9 vulExists(facebook1,publicEmail)
+6 vulExists(facebook1,userSimEmail)

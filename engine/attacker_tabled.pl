@@ -3,6 +3,8 @@
 :- dynamic issuedInfo/1.
 :- dynamic assumedAccess/2.
 
+:- table hasAccess/2, knows/3.
+
 % (hasAccess(Account, attacker), write('Compromised='), writeln(Account), fail; true).
 
 %% Example for test database : Attacker %%
@@ -13,78 +15,68 @@
 hasAccess(Account, user) :-
     hasAccount(_, _, Account).
 
-hasAccess(Account, attacker) :-
-    hasAccessTo(Account, attacker, []).
+hasAccess(default, _).
 
-hasAccessTo(default, _, _).
-
-hasAccessTo(Account, Person, _) :-
+hasAccess(Account, Person, _) :-
     assumedAccess(Account, Person).
 
-hasAccessTo(Account, Person, L) :-
-    knows(Person, Account, password, L), 
-    knows(Person, Account, username, L).
+hasAccess(Account, Person) :-
+    knows(Person, Account, password), 
+    knows(Person, Account, username).
 
-hasAccessTo(Account, Person, L) :-
+hasAccess(Account, Person) :-
     singleSignOn(Account, SSOAccount),
-    \+ member(SSOAccount, L),
-    hasAccessTo(Person, SSOAccount, [Account| L]).
+    hasAccess(Person, SSOAccount).
 
-hasAccessTo(Account, Person, L) :-
+hasAccess(Account, Person) :-
     resetInfo(Account, Info, RecAcc), 
-    knowsAll(Person, Account, Info, L),
-    \+ member(RecAcc, L),
-    hasAccessTo(RecAcc, Person, [Account | L]).
+    knowsAll(Person, Account, Info),
+    hasAccess(RecAcc, Person).
 
 
 % knowsAll/3
 % tail recursive function to know all of information
 knowsAll(_, _, [], _).
-knowsAll(attacker, Account, [I | Info], L) :-
-    knows(attacker, Account, I, L),
-    knowsAll(attacker, Account, Info, L).
+knowsAll(attacker, Account, [I | Info]) :-
+    knows(attacker, Account, I),
+    knowsAll(attacker, Account, Info).
 
 % knows/3
 % an attackers knows login credentials and email if they can be obtained due to
 % vulnerabilities or through account connections
 
-knows(Person, Account, Info, L) :-
-    knowsInfo(Person, Account, Info, L).
-
-% knowsInfo/4
-% helper function to avoid revisiting accounts
-
-knowsInformation(attacker, Account, Field) :-
+knows(attacker, Account, Field) :-
     vulExists(Account, Vulnerability),
     vulProperty(Vulnerability, Field, known).
 
-knowsInfo(attacker, Account, Field, _) :-
-    knowsInformation(attacker, Account, Field).
-
-knowsInfo(attacker, Account1, Field, _) :-
+knows(attacker, Account, Field) :-
     accountConn(Account1, Account2, Field, same),
-    knowsInformation(attacker, Account2, Field).
+    knows(attacker, Account2, Field).
 
-knowsInfo(attacker, Account, password, L) :-
+knows(attacker, Account, username) :-
     vulExists(Account, userInPw),
-    knows(attacker, Account, username, L).
+    knows(attacker, account, username).
 
-knowsInfo(attacker, Account, username, L) :-
+knows(attacker, Account, password) :-
+    vulExists(Account, userInPw),
+    knows(attacker, Account, username).
+
+knows(attacker, Account, username) :-
     vulExists(Account, userSimEmail),
-    knows(attacker, Account, email, L).
+    knows(attacker, Account, email).
 
-knowsInfo(attacker, Account, password, L) :-
+knows(attacker, Account, password) :-
     pwContains(Account, Info),
-    knowsAll(attacker, Account, Info, L).
+    knowsAll(attacker, Account, Info).
 
 % attacker knows personal information of user if the information is public
 % or can be obtained through other means.   
-knowsInfo(attacker, Account, Info, L) :-
+knows(attacker, Account, Info) :-
     Info \== username,
     Info \== password,
     Info \== email,
     (public(Info);
-    canRetrieve(Account, Info, L)).
+    canRetrieve(Account, Info)).
 
 
 % public/1
@@ -114,4 +106,4 @@ canRetrieve(Acc1, I, L) :-
     member(Info, PrivateInfo),
     \+ member(Acc2, L),
     Acc2 \== Acc1,
-    hasAccessTo(Acc2, attacker, [Acc1 | L]).
+    hasAccessTo(Acc2, attacker).
