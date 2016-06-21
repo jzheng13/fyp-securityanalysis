@@ -1,0 +1,8 @@
+id,pub,priv,email,empublic
+google1,name,birthday,microsoft1,0
+microsoft1,name,birthday,google1,0
+apple1,,"name, birthday, currentCity",google1,0
+facebook1,"name, birthday, currentCity",,google1,1
+expedia1,,"name, birthday, currentCity",google1,0
+steam1,,,google1,0
+twitter1,name,currentCity,google1,0

@@ -1,0 +1,212 @@
+strict digraph G {
+
+subgraph g1 {
+edge [color="#821881", penwidth=2]
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,username,[])"
+"knows(attacker,apple1,username,[])" -> "knows(attacker,apple1,email,[])"
+"knows(attacker,apple1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,apple1,email,[])" -> "accountConn(apple1,facebook1,email,same)"
+"knows(attacker,apple1,username,[])" -> "vulExists(apple1,userSimEmail)"
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,password,[])"
+"knows(attacker,apple1,password,[])" -> "pwContains(apple1,[name,birthday])"
+"knows(attacker,apple1,password,[])" -> "knowsAll(attacker,apple1,[name,birthday],[])"
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knowsAll(attacker,apple1,[birthday],[])"
+"knowsAll(attacker,apple1,[birthday],[])" -> "knowsAll(attacker,apple1,[],[])"
+"knowsAll(attacker,apple1,[birthday],[])" -> "knows(attacker,apple1,birthday,[])"
+"knows(attacker,apple1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knows(attacker,apple1,name,[])"
+"knows(attacker,apple1,name,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+
+}
+
+subgraph g2 {
+edge [color="#141000", penwidth=2]
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,username,[])"
+"knows(attacker,apple1,username,[])" -> "knows(attacker,apple1,email,[])"
+"knows(attacker,apple1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,apple1,email,[])" -> "accountConn(apple1,facebook1,email,same)"
+"knows(attacker,apple1,username,[])" -> "vulExists(apple1,userSimEmail)"
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,password,[])"
+"knows(attacker,apple1,password,[])" -> "pwContains(apple1,[name,birthday])"
+"knows(attacker,apple1,password,[])" -> "knowsAll(attacker,apple1,[name,birthday],[])"
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knowsAll(attacker,apple1,[birthday],[])"
+"knowsAll(attacker,apple1,[birthday],[])" -> "knowsAll(attacker,apple1,[],[])"
+"knowsAll(attacker,apple1,[birthday],[])" -> "knows(attacker,apple1,birthday,[])"
+"knows(attacker,apple1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knows(attacker,apple1,name,[])"
+"knows(attacker,apple1,name,[])" -> "publicInfo(twitter1,[name])"
+}
+
+subgraph g4 {
+edge [color="#603863", penwidth=2]
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,username,[])"
+"knows(attacker,apple1,username,[])" -> "knows(attacker,apple1,email,[])"
+"knows(attacker,apple1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,apple1,email,[])" -> "accountConn(apple1,facebook1,email,same)"
+"knows(attacker,apple1,username,[])" -> "vulExists(apple1,userSimEmail)"
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,password,[])"
+"knows(attacker,apple1,password,[])" -> "pwContains(apple1,[name,birthday])"
+"knows(attacker,apple1,password,[])" -> "knowsAll(attacker,apple1,[name,birthday],[])"
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knowsAll(attacker,apple1,[birthday],[])"
+"knowsAll(attacker,apple1,[birthday],[])" -> "knowsAll(attacker,apple1,[],[])"
+"knowsAll(attacker,apple1,[birthday],[])" -> "knows(attacker,apple1,birthday,[])"
+"knows(attacker,apple1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knows(attacker,apple1,name,[])"
+"knows(attacker,apple1,name,[])" -> "publicInfo(google1,[name])"
+}
+subgraph g5 {
+edge [color="#957374", penwidth=2]
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,username,[])"
+"knows(attacker,apple1,username,[])" -> "knows(attacker,apple1,email,[])"
+"knows(attacker,apple1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,apple1,email,[])" -> "accountConn(apple1,facebook1,email,same)"
+"knows(attacker,apple1,username,[])" -> "vulExists(apple1,userSimEmail)"
+"hasAccessTo(apple1,attacker,[])" -> "knows(attacker,apple1,password,[])"
+"knows(attacker,apple1,password,[])" -> "pwContains(apple1,[name,birthday])"
+"knows(attacker,apple1,password,[])" -> "knowsAll(attacker,apple1,[name,birthday],[])"
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knowsAll(attacker,apple1,[birthday],[])"
+"knowsAll(attacker,apple1,[birthday],[])" -> "knowsAll(attacker,apple1,[],[])"
+"knowsAll(attacker,apple1,[birthday],[])" -> "knows(attacker,apple1,birthday,[])"
+"knows(attacker,apple1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+"knowsAll(attacker,apple1,[name,birthday],[])" -> "knows(attacker,apple1,name,[])"
+"knows(attacker,apple1,name,[])" -> "publicInfo(microsoft1,[name])"
+}
+subgraph g6 {
+edge [color="#143502", penwidth=2]
+"hasAccessTo(microsoft1,attacker,[])" -> "knows(attacker,microsoft1,username,[])"
+"knows(attacker,microsoft1,username,[])" -> "knows(attacker,microsoft1,email,[])"
+"knows(attacker,microsoft1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,microsoft1,email,[])" -> "accountConn(microsoft1,facebook1,email,same)"
+"knows(attacker,microsoft1,username,[])" -> "vulExists(microsoft1,userSimEmail)"
+"hasAccessTo(microsoft1,attacker,[])" -> "knows(attacker,microsoft1,password,[])"
+"knows(attacker,microsoft1,password,[])" -> "pwContains(microsoft1,[name,birthday])"
+"knows(attacker,microsoft1,password,[])" -> "knowsAll(attacker,microsoft1,[name,birthday],[])"
+"knowsAll(attacker,microsoft1,[name,birthday],[])" -> "knowsAll(attacker,microsoft1,[birthday],[])"
+"knowsAll(attacker,microsoft1,[birthday],[])" -> "knowsAll(attacker,microsoft1,[],[])"
+"knowsAll(attacker,microsoft1,[birthday],[])" -> "knows(attacker,microsoft1,birthday,[])"
+"knows(attacker,microsoft1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+"knowsAll(attacker,microsoft1,[name,birthday],[])" -> "knows(attacker,microsoft1,name,[])"
+"knows(attacker,microsoft1,name,[])" -> "publicInfo(twitter1,[name])"
+}
+subgraph g10 {
+edge [color="#564154", penwidth=2]
+"hasAccessTo(microsoft1,attacker,[])" -> "knows(attacker,microsoft1,username,[])"
+"knows(attacker,microsoft1,username,[])" -> "knows(attacker,microsoft1,email,[])"
+"knows(attacker,microsoft1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,microsoft1,email,[])" -> "accountConn(microsoft1,facebook1,email,same)"
+"knows(attacker,microsoft1,username,[])" -> "vulExists(microsoft1,userSimEmail)"
+"hasAccessTo(microsoft1,attacker,[])" -> "knows(attacker,microsoft1,password,[])"
+"knows(attacker,microsoft1,password,[])" -> "pwContains(microsoft1,[name,birthday])"
+"knows(attacker,microsoft1,password,[])" -> "knowsAll(attacker,microsoft1,[name,birthday],[])"
+"knowsAll(attacker,microsoft1,[name,birthday],[])" -> "knowsAll(attacker,microsoft1,[birthday],[])"
+"knowsAll(attacker,microsoft1,[birthday],[])" -> "knowsAll(attacker,microsoft1,[],[])"
+"knowsAll(attacker,microsoft1,[birthday],[])" -> "knows(attacker,microsoft1,birthday,[])"
+"knows(attacker,microsoft1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+"knowsAll(attacker,microsoft1,[name,birthday],[])" -> "knows(attacker,microsoft1,name,[])"
+"knows(attacker,microsoft1,name,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+}
+subgraph g11 {
+edge [color="#475303", penwidth=2]
+"hasAccessTo(microsoft1,attacker,[])" -> "knows(attacker,microsoft1,username,[])"
+"knows(attacker,microsoft1,username,[])" -> "knows(attacker,microsoft1,email,[])"
+"knows(attacker,microsoft1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,microsoft1,email,[])" -> "accountConn(microsoft1,facebook1,email,same)"
+"knows(attacker,microsoft1,username,[])" -> "vulExists(microsoft1,userSimEmail)"
+"hasAccessTo(microsoft1,attacker,[])" -> "knows(attacker,microsoft1,password,[])"
+"knows(attacker,microsoft1,password,[])" -> "pwContains(microsoft1,[name,birthday])"
+"knows(attacker,microsoft1,password,[])" -> "knowsAll(attacker,microsoft1,[name,birthday],[])"
+"knowsAll(attacker,microsoft1,[name,birthday],[])" -> "knowsAll(attacker,microsoft1,[birthday],[])"
+"knowsAll(attacker,microsoft1,[birthday],[])" -> "knowsAll(attacker,microsoft1,[],[])"
+"knowsAll(attacker,microsoft1,[birthday],[])" -> "knows(attacker,microsoft1,birthday,[])"
+"knows(attacker,microsoft1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+"knowsAll(attacker,microsoft1,[name,birthday],[])" -> "knows(attacker,microsoft1,name,[])"
+"knows(attacker,microsoft1,name,[])" -> "publicInfo(microsoft1,[name])"
+}
+subgraph g12 {
+edge [color="#729719", penwidth=2]
+"hasAccessTo(microsoft1,attacker,[])" -> "knows(attacker,microsoft1,username,[])"
+"knows(attacker,microsoft1,username,[])" -> "knows(attacker,microsoft1,email,[])"
+"knows(attacker,microsoft1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,microsoft1,email,[])" -> "accountConn(microsoft1,facebook1,email,same)"
+"knows(attacker,microsoft1,username,[])" -> "vulExists(microsoft1,userSimEmail)"
+"hasAccessTo(microsoft1,attacker,[])" -> "knows(attacker,microsoft1,password,[])"
+"knows(attacker,microsoft1,password,[])" -> "pwContains(microsoft1,[name,birthday])"
+"knows(attacker,microsoft1,password,[])" -> "knowsAll(attacker,microsoft1,[name,birthday],[])"
+"knowsAll(attacker,microsoft1,[name,birthday],[])" -> "knowsAll(attacker,microsoft1,[birthday],[])"
+"knowsAll(attacker,microsoft1,[birthday],[])" -> "knowsAll(attacker,microsoft1,[],[])"
+"knowsAll(attacker,microsoft1,[birthday],[])" -> "knows(attacker,microsoft1,birthday,[])"
+"knows(attacker,microsoft1,birthday,[])" -> "publicInfo(facebook1,[name,birthday,current_city,hometown,workplace,university])"
+"knowsAll(attacker,microsoft1,[name,birthday],[])" -> "knows(attacker,microsoft1,name,[])"
+"knows(attacker,microsoft1,name,[])" -> "publicInfo(google1,[name])"
+}
+
+subgraph g14 {
+edge [color="#689798", penwidth=2]
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,username,[])"
+"knows(attacker,twitter1,username,[])" -> "knows(attacker,twitter1,email,[])"
+"knows(attacker,twitter1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,twitter1,email,[])" -> "accountConn(twitter1,facebook1,email,same)"
+"knows(attacker,twitter1,username,[])" -> "vulExists(twitter1,userSimEmail)"
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,password,[])"
+"knows(attacker,twitter1,password,[])" -> "vulExists(facebook1,commonPw)"
+"knows(attacker,twitter1,password,[])" -> "accountConn(twitter1,facebook1,password,same)"
+}
+
+subgraph g15 {
+edge [color="#257743", penwidth=2]
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,username,[])"
+"knows(attacker,twitter1,username,[])" -> "vulExists(twitter1, publicUser)"
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,password,[])"
+"knows(attacker,twitter1,password,[])" -> "vulExists(facebook1,commonPw)"
+"knows(attacker,twitter1,password,[])" -> "accountConn(twitter1,facebook1,password,same)"
+}
+
+subgraph g16 {
+edge [color="#573781", penwidth=2]
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,username,[])"
+"knows(attacker,twitter1,username,[])" -> "knows(attacker,twitter1,email,[])"
+"knows(attacker,twitter1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,twitter1,email,[])" -> "accountConn(twitter1,facebook1,email,same)"
+"knows(attacker,twitter1,username,[])" -> "vulExists(twitter1,userSimEmail)"
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,password,[])"
+"knows(attacker,twitter1,password,[])" -> "vulExists(facebook1,commonPw)"
+"knows(attacker,twitter1,password,[])" -> "accountConn(twitter1,facebook1,password,same)"
+}
+
+subgraph g19 {
+edge [color="#257743", penwidth=2]
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,username,[])"
+"knows(attacker,twitter1,username,[])" -> "vulExists(twitter1, publicUser)"
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,password,[])"
+"knows(attacker,twitter1,password,[])" -> "vulExists(twitter1,commonPw)"
+}
+
+subgraph g20 {
+edge [color="#257743", penwidth=2]
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,username,[])"
+"knows(attacker,twitter1,username,[])" -> "knows(attacker,twitter1,email,[])"
+"knows(attacker,twitter1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,twitter1,email,[])" -> "accountConn(twitter1,facebook1,email,same)"
+"hasAccessTo(twitter1,attacker,[])" -> "knows(attacker,twitter1,password,[])"
+"knows(attacker,twitter1,password,[])" -> "vulExists(twitter1,commonPw)"
+}
+
+subgraph g17 {
+edge [color="#129778", penwidth=2]
+"hasAccessTo(facebook1,attacker,[])" -> "knows(attacker,facebook1,username,[])"
+"knows(attacker,facebook1,username,[])" -> "knows(attacker,facebook1,email,[])"
+"knows(attacker,facebook1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,facebook1,username,[])" -> "vulExists(facebook1,userSimEmail)"
+"knows(attacker,facebook1,password,[])" -> "vulExists(twitter1,commonPw)"
+"knows(attacker,facebook1,password,[])" -> "accountConn(facebook1,twitter1,password,same)"
+}
+subgraph g18 {
+edge [color="#361567", penwidth=2]
+"hasAccessTo(facebook1,attacker,[])" -> "knows(attacker,facebook1,username,[])"
+"knows(attacker,facebook1,username,[])" -> "knows(attacker,facebook1,email,[])"
+"knows(attacker,facebook1,email,[])" -> "vulExists(facebook1,publicEmail)"
+"knows(attacker,facebook1,username,[])" -> "vulExists(facebook1,userSimEmail)"
+"hasAccessTo(facebook1,attacker,[])" -> "knows(attacker,facebook1,password,[])"
+"knows(attacker,facebook1,password,[])" -> "vulExists(facebook1,commonPw)"
+}
+}

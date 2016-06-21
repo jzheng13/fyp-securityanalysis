@@ -1,25 +1,8 @@
 % :- use_module(['abduction/abduction.pl']).
-
+:- use_module(library(statistics)).
 :- set_prolog_flag(double_quotes, codes).
-:- meta_predicate trace_protocol(0).
 
 %% Helper functions %%
-
-% -- trace_protocol/0, 1
-% for separating traces of different solutions into different files
-trace_protocol :-
-    Name = trace_protocol_index,
-    catch(nb_getval(Name, N), _Exc, nb_setval(Name, 0)),
-    % writeln(ex:Exc), 
-    nb_current(Name, N),
-    % writeln(nb_current(Name, N)), 
-    M is N+1, nb_setval(Name, M),
-    % writeln(nb_setval(Name, M)),
-    format(atom(PN), '~s_~d.tty', [Name, N]),
-    % writeln(trace_protocol:PN),
-    protocol(PN).
-
-trace_protocol(Q) :- trace_protocol, forall(Q, trace_protocol).
 
 
 % -- today/3

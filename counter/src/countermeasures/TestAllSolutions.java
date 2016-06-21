@@ -2,6 +2,7 @@ package countermeasures;
 
 import org.jpl7.Atom;
 import org.jpl7.Term;
+import org.jpl7.Variable;
 
 public class TestAllSolutions {
 	
@@ -14,7 +15,7 @@ public class TestAllSolutions {
 				trace(canRetrieve/3), trace(accountConn/4), trace(userPublic/1), trace(privateInfo/2), trace(pwContains/2).
 		 */
 		q.query("leash(-all)");
-		q.query("trace(hasAccess/2)");
+		q.query("trace(policyViolation/2)");
 		q.query("trace(hasAccessTo/3)");
 		q.query("trace(knowsAll/4)");
 		q.query("trace(knows/4)");
@@ -27,10 +28,18 @@ public class TestAllSolutions {
 		q.query("trace(userPublic/1)");
 		q.query("trace(privateInfo/2)");
 		q.query("trace(pwContains/2)");
-		q.printAllOutput("policyViolation", new Term[] {
-				new Atom("microsoft1"), new Atom("attacker")});
+		//q.printAllOutput("policyViolation", new Term[] {
+		//		new Variable("Acc"), new Atom("attacker")});
 		//GraphGenerator.makeTreeAll("outputall.txt", "treeall.txt");
-		GraphGenerator.dotRepresentationAll("treeall.txt", "graphall.dot");
-		// GraphGenerator.dotFigure("treeall.txt", "agall");
+		//GraphGenerator.dotRepresentationAll("treeall.txt", "graphall.dot");
+		//GraphGenerator.dotFigure("treeall.txt", "agall");
+		AGMetrics agm = new AGMetrics("graphall.dot");
+		System.out.println(agm.getNoPaths());
+		System.out.println(agm.getMeanPath());
+		System.out.println(agm.getMedian());
+		System.out.println(agm.getMode());
+		System.out.println(agm.getNormMean());
+		System.out.println(agm.getShortestPath());
+		System.out.println(agm.getStdDev());
 	}
 }

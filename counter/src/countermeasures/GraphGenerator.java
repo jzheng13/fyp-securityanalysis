@@ -9,10 +9,17 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.Stack;
 
+
+
 public class GraphGenerator {
+	
+	private static final String TMP_FOLDER = "./temp/";
 
 	public static void makeTree(String src, String dest){
 		Path path = Paths.get(src);
@@ -113,12 +120,9 @@ public class GraphGenerator {
 			List<Integer> fails = new ArrayList<Integer>();
 			List<Integer> redos = new ArrayList<Integer>();
 			List<String> redoStrings = new ArrayList<String>();
-			int n = 0;
+			List<String> failStrings = new ArrayList<String>();
 			int minLvl = 100;
-			writers.add(new PrintWriter(n + dest));
-		    fails.add(0);
-		    redos.add(0);
-		    redoStrings.add("");
+
 		    while (!reversed.isEmpty()) {
 		    	String start = reversed.peek();
 		    	String[] elements = start.split(" ");
@@ -127,10 +131,17 @@ public class GraphGenerator {
 		    	if (elements[2].equals("Exit:") && lvl == minLvl) {
 		    		break;
 		    	} else {
-		    		System.out.println(start);
 		    		reversed.pop();
 		    	}
 		    }
+		    
+		    int n = 0;
+			writers.add(new PrintWriter(TMP_FOLDER + n + dest));
+		    fails.add(0);
+		    redos.add(0);
+		    redoStrings.add("");
+		    failStrings.add("");
+		    
 			while (!reversed.isEmpty()) {
 				String debugString = reversed.peek();
 				debug.println(debugString);
@@ -142,62 +153,47 @@ public class GraphGenerator {
 		        if (lvl < minLvl) {
 		        	minLvl = lvl;
 		        }
-		        String query = lvl + " ";
+		        String query = "";
 	        	for (int i = 4; i < elements.length; i++) {
 	        		query += elements[i];
 	        	}
 	        	
 	        	if (lvl == minLvl && elements[2].equals("Exit:")) {
-	        		n++;
-	        		writers.get(n - 1).close();
-	        		writers.add(new PrintWriter(n + dest));
+	        		writers.add(new PrintWriter(TMP_FOLDER + n + dest));
 	    		    fails.add(0);
 	    		    redos.add(0);
 	    		    redoStrings.add("");
+	    		    failStrings.add("");
+	    		    n++;
 	        	}
 
-	        	for (int i = 0; i <= n; i++) {
-		        	if (redos.get(i) == 0 && elements[2].equals("Fail:")) {
-		        		fails.add(i, fails.remove(i) + 1);
-		        		debug.println("fails " + i + " = " + fails.get(i));
-		        	} else if (redos.get(i) == 0 && elements[2].equals("Redo:")) {
-		        		redos.add(i, redos.remove(i) + 1);
-		        		debug.println("redos " + i + " = " + redos.get(i));
-		        		String redoString = "";		
-		        		for (int j = 4; j < elements.length; j++) {
-		        			redoString += elements[j];	
-		        		}
-		        		redoStrings.remove(i);
-	        			redoStrings.add(i, redoString);
-		        		debug.println("redoString " + i + " = " + redoStrings.get(i));
-		        	}
-		        	
-		        	if (redos.get(i) > 0) {
-		        		String comp = "";
-		        		for (int j = 4; j < elements.length; j++) {
-		        			comp += elements[j];
-		        		}
-		        		if (elements[2].equals("Call:") && comp.equals(redoStrings.get(i))) {
-		        			redos.remove(i);
-		        			redos.add(i, 0);
-		        			debug.println("redos " + i + " = " + redos.get(i));
-		        			redoStrings.remove(i);
-		        			redoStrings.add(i, "");
+	        	for (int i = 0; i < n; i++) {
+		        	if (redos.get(i) == 0 && fails.get(i) == 0 && lvl > minLvl) {
+		        		switch (elements[2]) {
+		        			case "Exit:": 
+		        				writers.get(i).println(lvl + " " + query);
+		        				break;
+		        			case "Redo:":
+		        				redos.set(i, 1);
+		        				redoStrings.set(i, query);
+		        				debug.println("redo" + i + "=1");
+		        				break;
+		        			case "Fail:":
+		        				fails.set(i, 1);
+		        				failStrings.set(i, query);
+		        				debug.println("fail" + i + "=1");
+		        				break;
 		        		}
 		        	}
-		        	
-		        	if (fails.get(i) == 0 && redos.get(i) == 0) {
-				        if (elements[2].equals("Exit:")) {
-				        	writers.get(i).println(query);
-					        debug.println(i + " output print");
-				        }
-		        	} else if (redos.get(i) == 0){
-		        		if (elements[2].equals("Exit;")) {
-		        			fails.add(i, fails.remove(i) + 1);
-		        		} else if (elements[2].equals("Call:")) {
-		        			fails.add(i, fails.remove(i) - 1);
+		        	if (elements[2].equals("Call:")) {
+		        		if (query.equals(failStrings.get(i))) {
+		        			fails.set(i, 0);
+		        			debug.println("fail" + i + "=0");
 		        		}
-		        		debug.println("fails " + i + " = " + fails.get(i));
+		        		if (query.equals(redoStrings.get(i))) {
+		        			redos.set(i, 0);
+		        			debug.println("redo" + i + "=0");
+		        		}
 		        	}
 	        	}
 			}
@@ -206,6 +202,7 @@ public class GraphGenerator {
         		writer.close();
         	}
 		} catch (FileNotFoundException e) {
+			System.out.println("ERROR");
 			System.err.format(e.getMessage());
 		}
 
@@ -229,14 +226,14 @@ public class GraphGenerator {
 		    	if ( curLvl > lvl.peek()) {
 		    		if (!cur.isEmpty()) {
 		    			dotRep.add("\"" + cur.peek() + "\"" + " -> " + "\"" 
-		    					+ predicates[1]+ "\"");
+		    					+ predicates[1]+ "\";");
 		    		}
 		    		cur.push(predicates[1]);
 		    		lvl.push(curLvl);
 		    	} else if (curLvl == lvl.peek()) {
 		    		cur.pop();
 		    		dotRep.add("\"" + cur.peek() + "\"" + " -> " + "\"" 
-		    				+ predicates[1]+ "\"");
+		    				+ predicates[1]+ "\";");
 		    		cur.push(predicates[1]);
 		    	} 
 		    }
@@ -266,9 +263,12 @@ public class GraphGenerator {
 	
 	public static void dotRepresentationAll(String src, String dest) {
 		int n = 0;
-		Path path = Paths.get(n + src);
+		Path path = Paths.get(TMP_FOLDER + n + src);
 		List<String> dotRep = new ArrayList<String>();
 		while (Files.exists(path)) {
+			dotRep.add("subgraph g" + n + " {");
+			int colour = 100000 + (new Random()).nextInt(899999);
+			dotRep.add("edge [color=\"#" + colour + "\", penwidth=2]s");
 			try (BufferedReader reader = Files.newBufferedReader(path)) {
 			    String line = null;
 			    Stack<Integer> lvl = new Stack<Integer>();
@@ -276,7 +276,11 @@ public class GraphGenerator {
 			    lvl.push(0);
 			    while ((line = reader.readLine()) != null) {
 			    	String[] predicates = line.split(" ");
+			    	for (String p : predicates) {
+			    		System.out.println(p);
+			    	}
 			    	int curLvl = Integer.parseInt(predicates[0]);
+			    	System.out.println(curLvl);
 		    		while (curLvl < lvl.peek()) {
 		    			cur.pop();
 		    			lvl.pop();
@@ -285,6 +289,8 @@ public class GraphGenerator {
 			    		if (!cur.isEmpty()) {
 			    			dotRep.add("\"" + cur.peek() + "\"" + " -> " + "\"" 
 			    					+ predicates[1]+ "\"");
+			    			System.out.println("\"" + cur.peek() + "\"" + " -> " + "\"" 
+			    					+ predicates[1]+ "\"");
 			    		}
 			    		cur.push(predicates[1]);
 			    		lvl.push(curLvl);
@@ -292,30 +298,37 @@ public class GraphGenerator {
 			    		cur.pop();
 			    		dotRep.add("\"" + cur.peek() + "\"" + " -> " + "\"" 
 			    				+ predicates[1]+ "\"");
+		    			System.out.println("\"" + cur.peek() + "\"" + " -> " + "\"" 
+		    					+ predicates[1]+ "\"");
 			    		cur.push(predicates[1]);
 			    	} 
 			    }
 			} catch (IOException x) {
 			    System.err.format(x.getMessage());
 			}
+			dotRep.add("};");
 			n++;
-			path = Paths.get(n + src);
+			path = Paths.get(TMP_FOLDER + n + src);
 		}
 	
 		try {
 			PrintWriter writer = new PrintWriter(dest);
-			writer.println("digraph G {");
+			writer.println("strict digraph G {");
 			while (!dotRep.isEmpty()){
-				writer.println(dotRep.remove(0) + ";");
+				writer.println(dotRep.remove(0));
 			}
 			writer.println("}");
 			writer.close();
 		} catch (FileNotFoundException e) {
 			System.err.format(e.getMessage());
 		}
+		File tmpFolder = new File("./temp");
+		for (File f : tmpFolder.listFiles()) {
+			f.delete();
+		}
 		Runtime rt = Runtime.getRuntime();
 		try {
-			Process p = rt.exec("dot -Tpng " + dest + " > ag1.png", null, 
+			Process p = rt.exec("cmd.exe /c " + "dot -Tsvg graphall.dot > ag1.svg", null, 
 					new File(System.getProperty("user.dir")));
 		} catch (IOException e) {
 			System.err.format(e.getMessage());
@@ -357,11 +370,12 @@ public class GraphGenerator {
 		}
 		graph.addln(graph.end_graph());
 		System.out.println(graph.getDotSource());
-		// String type = "png";
-		// String representationType = "dot";
-		// File out = new File(dest + type);
-		// graph.writeGraphToFile(graph.getGraph(graph.getDotSource(), type, 
-		//	representationType), out);
+		String type = "svg";
+		String representationType = "dot";
+		/* File out = new File(dest + type);
+		   graph.writeGraphToFile(graph.getGraph(graph.getDotSource(), type, 
+		     representationType), out); 
+		 */
 	}
 	
 }

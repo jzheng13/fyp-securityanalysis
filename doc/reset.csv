@@ -1,0 +1,12 @@
+id,resetacc,resetinf
+google1,microsoft1,"username, email"
+microsoft1,google1,"username, email"
+apple1,google1,email
+facebook1,google1,email
+expedia1,google1,email
+steam1,google1,username
+twitter1,google1,username
+twitter1,google1,email
+apple1,default,"birthday, hometown, job"
+steam1,google1,email
+steam1,google1,mobile

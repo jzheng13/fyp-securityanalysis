@@ -1,0 +1,27 @@
+graph {
+
+}
+
+node {
+	size: 30px;
+	shape: circle;
+	stroke-mode: plain;
+    stroke-color: black;
+	fill-color: #8be349;
+    text-style: normal;
+    text-size: 20;
+}
+
+node.compromised {
+   fill-color: #d14b6b;
+}
+
+node:clicked {
+    size: 40px;
+    text-style: bold;
+}
+
+edge {
+    text-alignment: along;
+    text-size: 15;
+}

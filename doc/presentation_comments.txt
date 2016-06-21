@@ -1,0 +1,11 @@
+name
+define interconnected accounts (explain connections)
+-- expand on privacy of information
+talk about problem first -> what happens if this is compromised -> ways to solve the problem (background)
+attack graph -> explain nodes and edges and colours more clearly
+(explain right off the bat what an attack graph is, convince the user)
+hypothetical analysis -> 
+evaluation
+buy an adapter
+
+talk about parsing maybe?
