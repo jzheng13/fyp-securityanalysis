@@ -1,6 +1,7 @@
-Project: A Logic-based Security Analyser for Interconnected User Accounts
-Name: Jia ZHENG (jz7213)
-CID: 00833013
+A Logic-based Security Analyser for Interconnected User Accounts
+(Final Year Project for Imperial College London BEng JMC)
+Name: Jia ZHENG
+
 Preliminary Code Archive
 
 
