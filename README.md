@@ -9,15 +9,18 @@ Final Year Project for Imperial College London BEng JMC
    Java source code for GUI, attack graph generating and processing, network graph generating and processing, prolog file reading and parsing, prolog program output getter. Also with external libraries required for displaying and etc.
 
 2. `debug`
+
    Prolog code during development for debugging purposes and trial and error. Not important.
 
 3. `doc`
+
    Documentation including report, description of example database and etc.
 
 4. `engine`*
+
    Prolog source files for reasoning engine. Parsed code also goes here.
 
-> * are folders containing source code
+> **Note**: Only folders marked with an asterisk contain source code.
 
 ## How to run
 
